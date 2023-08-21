@@ -1,0 +1,57 @@
+<script lang="ts" setup>
+import type { Goal } from '~/types/common'
+
+defineProps<{
+  goal: Goal
+  showDelete?: boolean
+}>()
+
+const emit = defineEmits<{
+  (event: 'delete'): void
+}>()
+</script>
+
+<template>
+  <div
+    class="flex items-center gap2vw"
+  >
+    <div class="text-uno-5 min-w-20 flex flex-col items-center text-8 font-bold">
+      <div :class="[goal.icon]" />
+      <div class="point-number">
+        {{ displayNumber(goal.goalScore) }}
+      </div>
+    </div>
+    <div class="min-w-0 flex flex-auto flex-col items-start">
+      <div class="text-uno-5 w-full flex items-center gap-2vw text-8 font-bold">
+        <span class="line-warp min-w-0">{{ goal.goalName }}</span>
+      </div>
+      <div class="text-uno-7 w-full flex items-center gap-2 text-6">
+        <span v-show="typeof goal.oneTimeScore === 'number'" class="point-number flex-shrink-0">+{{ displayNumber(goal.oneTimeScore) }}</span>
+        <span v-show="typeof goal.oneTimeScore === 'number' && goal.oneTimeContent"> /</span>
+        <span class="line-warp min-w-0">{{ goal.oneTimeContent }}</span>
+      </div>
+      <div class="text-uno-5 text-3">
+        {{ dayjs(goal.timeRange[0]).format('YYYY-MM-DD') }} - {{ dayjs(goal.timeRange[1]).format('YYYY-MM-DD') }}
+      </div>
+    </div>
+    <a-popconfirm
+      content="你确定要删除这条记录吗？"
+      position="top"
+      :content-class="`uno-${goal.color}`"
+      @ok="emit('delete')"
+    >
+      <template #icon>
+        <div class="i-solar-info-circle-bold-duotone text-uno-5" />
+      </template>
+      <a-button v-if="showDelete" type="text" class="ml-auto">
+        <template #icon>
+          <div class="i-solar-trash-bin-minimalistic-bold-duotone op50" />
+        </template>
+      </a-button>
+    </a-popconfirm>
+  </div>
+</template>
+
+<style lang="css" scoped>
+
+</style>

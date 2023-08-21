@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const online = useOnline()
+
+definePageMeta({
+  layout: 'full',
+})
 </script>
 
 <template>

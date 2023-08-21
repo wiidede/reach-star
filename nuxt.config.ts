@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
+    'arco-design-nuxt-module',
+    'nuxt-lodash',
   ],
 
   experimental: {
@@ -19,8 +21,16 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
+  components: [
+    {
+      path: '~/components',
+      extensions: ['.vue', '.tsx'],
+    },
+  ],
+
   css: [
     '@unocss/reset/tailwind.css',
+    '~/styles/main.css',
   ],
 
   colorMode: {
@@ -40,6 +50,11 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    '/': { prerender: true },
+    '/app/**': { ssr: false },
+  },
+
   app: {
     head: {
       viewport: 'width=device-width,initial-scale=1',
@@ -57,6 +72,11 @@ export default defineNuxtConfig({
   },
 
   pwa,
+
+  lodash: {
+    prefix: '_',
+    upperAfterPrefix: false,
+  },
 
   devtools: {
     enabled: true,
