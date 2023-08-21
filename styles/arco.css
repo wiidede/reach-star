@@ -1,56 +1,56 @@
-body.reach-star {
+.reach-star {
   --border-radius-none: 0;
   --border-radius-small: 1rem;
   --border-radius-medium: 1rem;
   --border-radius-large: 1rem;
 }
 
-body.reach-star .arco-btn-size-mini {
+.reach-star .arco-btn-size-mini {
   font-size: 1.0rem;
   height: fit-content;
   padding: 0.3rem 0.6rem;
 }
-body.reach-star .arco-btn-size-medium {
+.reach-star .arco-btn-size-medium {
   font-size: 1.2rem;
   height: fit-content;
   padding: 0.5rem 1rem;
 }
 
-body.reach-star .arco-picker-size-medium {
+.reach-star .arco-picker-size-medium {
   height: auto;
   padding: 0.5rem 0.8rem;
   font-size: 1.2rem;
 }
 
-body.reach-star .arco-picker-size-medium input {
+.reach-star .arco-picker-size-medium input {
   font-size: 1.2rem;
   padding: 0;
 }
 
-body.reach-star .arco-input-wrapper  {
+.reach-star .arco-input-wrapper  {
   padding: 0 0.8rem;
 }
 
-body.reach-star .arco-textarea-wrapper,
-body.reach-star .arco-textarea {
+.reach-star .arco-textarea-wrapper,
+.reach-star .arco-textarea {
   font-size: 1rem;
 }
 
-body.reach-star .arco-input-wrapper .arco-input.arco-input-size-medium {
+.reach-star .arco-input-wrapper .arco-input.arco-input-size-medium {
   font-size: 1rem;
 }
 
-body.reach-star .arco-form-item {
+.reach-star .arco-form-item {
   align-items: center;
   margin-bottom: 0.8rem;
   position: relative;
 }
 
-body.reach-star .arco-form-item-label {
+.reach-star .arco-form-item-label {
   font-size: 0.85rem;
 }
 
-body.reach-star .arco-form-item-message {
+.reach-star .arco-form-item-message {
   font-size: 0.6rem;
   position: absolute;
   bottom: -0.7rem;
@@ -58,7 +58,7 @@ body.reach-star .arco-form-item-message {
   min-height: 0;
 }
 
-body.reach-star .arco-input-number-mode-embed .arco-input-number-step {
+.reach-star .arco-input-number-mode-embed .arco-input-number-step {
   position: absolute;
   top: 4px;
   right: 0.8rem;
@@ -66,73 +66,73 @@ body.reach-star .arco-input-number-mode-embed .arco-input-number-step {
   width: 1.2rem;
 }
 
-body.reach-star .arco-btn-primary {
+.reach-star .arco-btn-primary {
   background-color: rgb(var(--primary-4));
 }
-body.reach-star .arco-btn-primary:hover {
+.reach-star .arco-btn-primary:hover {
   background-color: rgb(var(--primary-3));
 }
-body.reach-star .arco-btn-primary:active {
+.reach-star .arco-btn-primary:active {
   background-color: rgb(var(--primary-5));
 }
-body.reach-star .arco-btn-primary:focus-visible {
+.reach-star .arco-btn-primary:focus-visible {
   box-shadow: 0 0 0 0.25em rgb(var(--primary-2));
 }
 
-body.reach-star .arco-btn-outline {
+.reach-star .arco-btn-outline {
   color: rgb(var(--primary-4));
   border: 1px solid rgb(var(--primary-4));
 }
-body.reach-star .arco-btn-outline:hover {
+.reach-star .arco-btn-outline:hover {
   color: rgb(var(--primary-3));
   border: 1px solid rgb(var(--primary-3));
 }
-body.reach-star .arco-btn-outline:active {
+.reach-star .arco-btn-outline:active {
   color: rgb(var(--primary-5));
   border: 1px solid rgb(var(--primary-5));
 }
-body.reach-star .arco-btn-outline:focus-visible {
+.reach-star .arco-btn-outline:focus-visible {
   color: rgb(var(--primary-2));
   border: 1px solid rgb(var(--primary-2));
 }
 
-body.reach-star .arco-link {
+.reach-star .arco-link {
   color: rgb(var(--primary-5));
   font-size: 0.8rem;
 }
 
-body.reach-star .arco-panel-date-inner {
+.reach-star .arco-panel-date-inner {
   width: auto;
 }
-body.reach-star .arco-picker-header {
+.reach-star .arco-picker-header {
   align-items: center;
 }
-body.reach-star .arco-picker-header-icon {
+.reach-star .arco-picker-header-icon {
   font-size: 0.6rem;
   line-height: 1;
   width: auto;
   height: auto;
 }
-body.reach-star .arco-picker-header-title {
+.reach-star .arco-picker-header-title {
   font-size: 0.8rem;
   line-height: 1;
 }
-body.reach-star .arco-picker-week-list-item {
+.reach-star .arco-picker-week-list-item {
   color: rgb(var(--primary-3));
 }
-body.reach-star .arco-picker-row {
+.reach-star .arco-picker-row {
   padding: 0;
 }
-body.reach-star .arco-picker-date {
+.reach-star .arco-picker-date {
   padding: 4px 2px;
 }
-body.reach-star .arco-picker-date-value {
+.reach-star .arco-picker-date-value {
   font-size: 0.7rem;
   height: 1.1rem;
   line-height: 1.1rem;
   min-width: 1.1rem;
 }
-body.reach-star .arco-picker-footer-now-wrapper {
+.reach-star .arco-picker-footer-now-wrapper {
   height: fit-content;
   line-height: 1;
   display: flex;
@@ -141,54 +141,54 @@ body.reach-star .arco-picker-footer-now-wrapper {
   padding: 4px;
 }
 
-body.reach-star .arco-descriptions-title {
+.reach-star .arco-descriptions-title {
   font-size: 1rem;
 }
-body.reach-star .arco-descriptions-size-medium .arco-descriptions-item-label-block,
-body.reach-star .arco-descriptions-size-medium .arco-descriptions-item-value-block {
+.reach-star .arco-descriptions-size-medium .arco-descriptions-item-label-block,
+.reach-star .arco-descriptions-size-medium .arco-descriptions-item-value-block {
   font-size: 0.8rem;
 }
-body.reach-star .arco-tag-size-medium {
+.reach-star .arco-tag-size-medium {
   font-size: 0.8rem;
   height: auto;
   line-height: normal;
 }
-body.reach-star .arco-tag-size-large {
+.reach-star .arco-tag-size-large {
   font-size: 1.2rem;
   height: auto;
   line-height: normal;
 }
 
-body.reach-star .arco-modal-pure {
+.reach-star .arco-modal-pure {
   background-color: transparent;
   padding: 0;
 }
-body.reach-star .arco-modal-pure .arco-modal-header {
+.reach-star .arco-modal-pure .arco-modal-header {
   display: none;
 }
-body.reach-star .arco-modal-pure .arco-modal-body {
+.reach-star .arco-modal-pure .arco-modal-body {
   font-size: 0.8rem;
 }
 
-body.reach-star .arco-radio-button {
+.reach-star .arco-radio-button {
   font-size: 0.8rem;
   line-height: 1.5rem;
 }
 
-body.reach-star .full-drawer .arco-drawer-body {
+.reach-star .full-drawer .arco-drawer-body {
   padding: 2vh 2vw;
 }
 
-body.reach-star .arco-descriptions-title {
+.reach-star .arco-descriptions-title {
   --at-apply: line-warp;
 }
 
-body.reach-star .arco-popconfirm-body {
+.reach-star .arco-popconfirm-body {
   font-size: 1rem;
   display: flex;
   align-items: center;
 }
-body.reach-star .arco-popconfirm-body .arco-popconfirm-icon {
+.reach-star .arco-popconfirm-body .arco-popconfirm-icon {
   font-size: 1.2rem;
   height: auto;
 }

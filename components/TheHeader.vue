@@ -37,11 +37,11 @@ const achievementCount = computed(() => {
       <span class="mr2 cursor-pointer text-3 hover:op80" @click="reduceFontSize">Aa</span>
       <span class="cursor-pointer text-5 hover:op80" @click="addFontSize">Aa</span>
     </div>
-    <router-link to="/app/goals" title="目标">
+    <NuxtLink to="/app/goals" title="目标">
       <div class="i-solar-star-angle-bold-duotone the-icon-primary text-uno-4 cursor-pointer text-6" />
-    </router-link>
-    <router-link to="/app/settings" title="设置">
+    </NuxtLink>
+    <NuxtLink to="/app/settings" title="设置">
       <div class="i-solar-settings-minimalistic-bold-duotone the-icon-primary cursor-pointer text-6 text-slate-500" />
-    </router-link>
+    </NuxtLink>
   </header>
 </template>

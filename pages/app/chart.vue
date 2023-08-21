@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { Goal, Rcd } from '~/types/common'
 
+definePageMeta({ layout: 'app' })
+
 const { store } = useStarStore()
 const goals = computed(() => store.value ? [...store.value.goals].reverse() : [])
 

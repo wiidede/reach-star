@@ -3,8 +3,6 @@ import type { FieldRule, FormInstance } from '@arco-design/web-vue'
 import TheIconSelectorVue from '~/components/TheIconSelector.vue'
 import type { Goal, TheRangeData, TheRangeRenderFn } from '~/types/common'
 
-definePageMeta({ layout: 'full' })
-
 const router = useRouter()
 const { store } = useStarStore()
 const { colorList, randomColor } = useColors()
@@ -127,7 +125,7 @@ function addPoint(value: number) {
 <template>
   <div class="h-full flex flex-col gap2vh">
     <a-button type="primary" @click="router.back()">
-      <i class="i-solar-alt-arrow-left-bold-duotone the-icon ml--2" />返回
+      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />返回
     </a-button>
     <div class="min-h-0 flex flex-auto flex-col gap2vh overflow-auto px2vw py2vw">
       <div
@@ -217,7 +215,7 @@ function addPoint(value: number) {
                   <div
                     v-for="color in colorList"
                     :key="color"
-                    class="bg-uno-5 transition-size-300 h6 w6 cursor-pointer rounded-full"
+                    class="h6 w6 cursor-pointer rounded-full bg-uno-5 transition-size-300"
                     :class="[`uno-${color}`, { 'w8 h8': color === newGoal.color }]"
                     @click="newGoal!.color = color"
                   />
@@ -228,7 +226,7 @@ function addPoint(value: number) {
                   <div
                     v-for="icon in iconList"
                     :key="icon"
-                    class="text-uno-4 transition-size-300 h6 w6 cursor-pointer"
+                    class="h6 w6 cursor-pointer text-uno-4 transition-size-300"
                     :class="[icon, { 'w8 h8 text-uno-5': icon === newGoal.icon }]"
                     @click="newGoal!.icon = icon"
                   />

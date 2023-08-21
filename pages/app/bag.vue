@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { Bag, Goal, Rcd, Reward, TheDescData, Time } from '~/types/common'
 
+definePageMeta({ layout: 'app' })
+
 const { store } = useStarStore()
 
 const currentType = ref<'' | Bag['type']>('')
@@ -97,11 +99,11 @@ function showCurrentReward(reward: Reward) {
       >
         <div v-if="item.type === 'goal'" class="flex flex-col items-center">
           <div
-            class="transition-size-300 h7 w7"
+            class="h7 w7 transition-size-300"
             :class="[item.icon]"
           />
           <div
-            class="transition-size-300 max-w-50 truncate text-4"
+            class="max-w-50 truncate text-4 transition-size-300"
             :title="item.oneTimeContent"
           >
             {{ item.oneTimeContent }}
@@ -109,22 +111,22 @@ function showCurrentReward(reward: Reward) {
         </div>
         <div v-else-if="item.type === 'reward'" class="flex flex-col items-center">
           <div
-            class="transition-size-300 h7 w7"
+            class="h7 w7 transition-size-300"
             :class="[item.icon]"
           />
           <div
-            class="transition-size-300 text-4"
+            class="text-4 transition-size-300"
           >
             {{ item.doneTimes.length }}
           </div>
         </div>
         <div v-else class="flex flex-col items-center">
           <div
-            class="transition-size-300 h7 w7"
+            class="h7 w7 transition-size-300"
             :class="[item.type === 'day' ? 'i-solar-star-bold-duotone' : 'i-solar-stars-bold-duotone']"
           />
           <div
-            class="transition-size-300 text-4"
+            class="text-4 transition-size-300"
           >
             {{ item.type === 'day' ? '一日星星' : '一周星星' }}
           </div>

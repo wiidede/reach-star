@@ -44,7 +44,7 @@ function onResetData() {
 <template>
   <div class="flex flex-col gap-5vh">
     <a-button type="primary" @click="router.back()">
-      <i class="i-solar-alt-arrow-left-bold-duotone the-icon ml--2" />返回
+      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />返回
     </a-button>
     <a-form :model="form" :rules="rules" auto-label-width @submit="onSubmit">
       <a-form-item>
@@ -93,8 +93,3 @@ function onResetData() {
 <style  scoped>
 
 </style>
-
-<route lang="yaml">
-meta:
-  layout: full
-  </route>

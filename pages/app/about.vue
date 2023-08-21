@@ -1,5 +1,5 @@
 <script setup>
-definePageMeta({ layout: 'full' })
+definePageMeta({ layout: 'app' })
 
 const { store, defaultStore } = useStarStore()
 const router = useRouter()

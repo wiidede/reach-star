@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { Rcd, TheDescData, Time } from '~/types/common'
 
+definePageMeta({ layout: 'app' })
+
 const { store } = useStarStore()
 // const days = computed(() => store.value ? [...store.value.days].reverse() : [])
 // const weeks = computed(() => store.value ? [...store.value.weeks].reverse() : [])
@@ -63,18 +65,20 @@ function showCurrentWeek(week: Time) {
 
 <template>
   <div class="h-full w-full flex shrink-0 flex-col items-center overflow-x-hidden overflow-y-auto md:flex-row md:items-initial">
-    <a-date-picker
+    <!-- <a-date-picker
       v-model="pickerValue"
       hide-trigger
       value-format="Date"
       class="the-date-display-picker h-fit flex-shrink-0"
-    >
+    > -->
+    <a-date-picker style="width: 200px;" />
+    <a-date-picker>
       <template #cell="{ date }: {date: Date}">
         <div class="arco-picker-date" :class="dayBgMap.get(dayjs(date).format('YYYY-MM-DD'))">
           <div class="arco-picker-date-date text-uno-3">
             {{ date.getDate() }}
           </div>
-          <div class="arco-picker-date-score text-uno-3 h-3 text-2.5">
+          <div class="arco-picker-date-score h-3 text-2.5 text-uno-3">
             {{ dayScoreMap.get(dayjs(date).format('YYYY-MM-DD')) }}
           </div>
         </div>

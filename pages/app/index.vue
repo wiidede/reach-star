@@ -4,6 +4,8 @@ import { useStorage } from '@vueuse/core'
 import type { StarStore } from '~/composables/star'
 import type { Goal, Rcd, TheAchievementModalContent } from '~/types/common'
 
+definePageMeta({ layout: 'app' })
+
 const testDay = 0
 
 const router = useRouter()
@@ -290,14 +292,14 @@ watchEffect(() => {
                 >
                   <div class="flex flex-col items-center">
                     <div
-                      class="transition-size-300 flex items-center gap2 text-5"
+                      class="flex items-center gap2 text-5 transition-size-300"
                       :class="{ 'text-7': newGoal === goal }"
                     >
                       <div class="text-6" :class="[goal.icon, { 'text-8': newGoal === goal }]" />
                       <span>{{ displayNumber(goal.oneTimeScore) }}</span>
                     </div>
                     <div
-                      class="transition-size-300 max-w-50 truncate text-4"
+                      class="max-w-50 truncate text-4 transition-size-300"
                       :class="[{ 'text-5': newGoal === goal }]"
                       :title="goal.oneTimeContent"
                     >
