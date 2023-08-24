@@ -39,11 +39,11 @@ watch(() => props.times, () => {
       {{ title }}
     </template>
     <div class="flex flex-col gap3vh md:h-full md:flex-row md:gap3vw">
-      <div class="md:flex-3 md:min-w-0">
+      <div class="md:min-w-0 md:flex-3">
         <slot />
       </div>
       <div
-        class="md:flex-7 min-h-0 flex flex-auto flex-col gap2vh md:min-w-0 md:gap-2vw md:overflow-y-auto"
+        class="min-h-0 flex flex-auto flex-col gap2vh md:min-w-0 md:gap-2vw md:overflow-y-auto md:flex-7"
         :class="{ 'py2vh px2vw': records.length }"
       >
         <TheRecordCard

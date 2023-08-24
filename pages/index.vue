@@ -19,5 +19,13 @@ const online = useOnline()
       </template>
     </Suspense>
     <InputEntry />
+    <NuxtLink to="/app">
+      <button
+        m-3 text-sm btn
+      >
+        GO APP
+      </button>
+    </NuxtLink>
+    <ADatePicker />
   </div>
 </template>

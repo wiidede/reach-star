@@ -1,5 +1,5 @@
 <script setup>
-definePageMeta({ layout: 'app' })
+definePageMeta({ layout: 'full' })
 
 const { store, defaultStore } = useStarStore()
 const router = useRouter()
@@ -12,7 +12,6 @@ function initStore() {
 
 <template>
   <div class="text-center">
-    <TheAbout />
     <a-button v-if="!store" type="primary" @click="initStore">
       start ✨ reach-star~
     </a-button>

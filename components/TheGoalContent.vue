@@ -15,22 +15,22 @@ const emit = defineEmits<{
   <div
     class="flex items-center gap2vw"
   >
-    <div class="text-uno-5 min-w-20 flex flex-col items-center text-8 font-bold">
+    <div class="min-w-20 flex flex-col items-center text-8 font-bold text-uno-5">
       <div :class="[goal.icon]" />
       <div class="point-number">
         {{ displayNumber(goal.goalScore) }}
       </div>
     </div>
     <div class="min-w-0 flex flex-auto flex-col items-start">
-      <div class="text-uno-5 w-full flex items-center gap-2vw text-8 font-bold">
-        <span class="line-warp min-w-0">{{ goal.goalName }}</span>
+      <div class="w-full flex items-center gap-2vw text-8 font-bold text-uno-5">
+        <span class="min-w-0 line-warp">{{ goal.goalName }}</span>
       </div>
-      <div class="text-uno-7 w-full flex items-center gap-2 text-6">
+      <div class="w-full flex items-center gap-2 text-6 text-uno-7">
         <span v-show="typeof goal.oneTimeScore === 'number'" class="point-number flex-shrink-0">+{{ displayNumber(goal.oneTimeScore) }}</span>
         <span v-show="typeof goal.oneTimeScore === 'number' && goal.oneTimeContent"> /</span>
-        <span class="line-warp min-w-0">{{ goal.oneTimeContent }}</span>
+        <span class="min-w-0 line-warp">{{ goal.oneTimeContent }}</span>
       </div>
-      <div class="text-uno-5 text-3">
+      <div class="text-3 text-uno-5">
         {{ dayjs(goal.timeRange[0]).format('YYYY-MM-DD') }} - {{ dayjs(goal.timeRange[1]).format('YYYY-MM-DD') }}
       </div>
     </div>

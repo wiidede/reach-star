@@ -3,6 +3,7 @@
   "packageManager": "pnpm@8.6.12",
   "scripts": {
     "build": "nuxi build",
+    "preview": "nuxi preview",
     "dev": "nuxi dev",
     "dev:pwa": "VITE_PLUGIN_PWA=true nuxi dev",
     "start": "node .output/server/index.mjs",
@@ -13,7 +14,7 @@
     "start:generate": "npx serve .output/public"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.40.2",
+    "@antfu/eslint-config": "^0.41.0",
     "@iconify-json/carbon": "^1.1.20",
     "@iconify-json/twemoji": "^1.1.12",
     "@nuxt/devtools": "^0.8.0",
@@ -23,7 +24,7 @@
     "@unocss/nuxt": "^0.55.2",
     "@vite-pwa/nuxt": "^0.1.0",
     "@vueuse/nuxt": "^10.3.0",
-    "arco-design-nuxt-module": "^0.0.9",
+    "arco-design-nuxt-module": "^0.0.10",
     "consola": "^3.2.3",
     "eslint": "^8.47.0",
     "nuxt": "^3.6.5",
@@ -34,6 +35,9 @@
   "dependencies": {
     "@arco-design/web-vue": "^2.50.1",
     "@iconify-json/solar": "^1.1.2",
-    "nuxt-lodash": "^2.5.0"
+    "@popperjs/core": "^2.11.8",
+    "dayjs": "^1.11.9",
+    "nuxt-lodash": "^2.5.0",
+    "v-calendar": "^3.0.3"
   }
 }

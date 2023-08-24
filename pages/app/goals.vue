@@ -188,7 +188,7 @@ function addPoint(value: number) {
                 <a-input-number v-model="newGoal.oneTimeScore" placeholder="请输入单次记录积分" />
               </a-form-item>
               <a-form-item field="timeRange" label="完成期限">
-                <a-range-picker
+                <!-- <a-range-picker
                   v-model="newGoal.timeRange"
                   :disabled-date="(current) => dayjs(current).isBefore(dayjs().startOf('date'))"
                   :allow-clear="false"
@@ -198,7 +198,7 @@ function addPoint(value: number) {
                   <template #suffix-icon>
                     <div class="i-solar-calendar-bold-duotone op50" />
                   </template>
-                </a-range-picker>
+                </a-range-picker> -->
               </a-form-item>
               <a-form-item field="newRange" label="阶段奖励">
                 <TheRange
