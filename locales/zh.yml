@@ -1,1 +1,8 @@
 title: 摘星
+nav:
+  home: 首页
+  statistic: 统计
+  achievement: 成就
+label:
+  achievement: 成就
+  credits: 积分

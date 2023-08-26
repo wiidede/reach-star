@@ -1,6 +1,4 @@
 <script setup>
-definePageMeta({ layout: 'full' })
-
 const { store, defaultStore } = useStarStore()
 const router = useRouter()
 

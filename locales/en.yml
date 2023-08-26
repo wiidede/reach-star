@@ -1,1 +1,8 @@
 title: Reach Star
+nav:
+  home: Home
+  statistic: Statistic
+  achievement: Achievement
+label:
+  achievement: Achievement
+  credits: Credits

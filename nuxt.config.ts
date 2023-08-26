@@ -55,6 +55,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/app/**': { ssr: false },
+    '/*/app/**': { ssr: false },
   },
 
   app: {

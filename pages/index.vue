@@ -34,6 +34,5 @@ const switchLocalePath = useSwitchLocalePath()
         GO APP
       </button>
     </NuxtLink>
-    <ADatePicker />
   </div>
 </template>

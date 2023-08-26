@@ -1,30 +1,31 @@
 <script lang="ts" setup>
-const navs = [
+const { t } = useI18n()
+const navs = computed(() => [
   {
-    name: 'reach-star',
+    name: t('nav.home'),
     to: '/app',
     icon: 'i-solar-star-bold-duotone',
     color: 'yellow',
   },
   {
-    name: '日历',
+    name: t('nav.statistic'),
     to: '/app/calendar',
     icon: 'i-solar-calendar-minimalistic-bold-duotone',
     color: 'lime',
   },
   {
-    name: '图表',
+    name: t('nav.statistic'),
     to: '/app/chart',
     icon: 'i-solar-chart-bold-duotone',
     color: 'teal',
   },
   {
-    name: '包裹',
+    name: t('nav.achievement'),
     to: '/app/bag',
     icon: 'i-solar-bag-smile-bold-duotone',
     color: 'purple',
   },
-]
+])
 </script>
 
 <template>
