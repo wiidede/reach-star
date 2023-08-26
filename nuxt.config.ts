@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     'arco-design-nuxt-module',
     'nuxt-lodash',
+    '@nuxtjs/i18n',
   ],
 
   experimental: {
@@ -73,6 +74,15 @@ export default defineNuxtConfig({
   },
 
   pwa,
+
+  i18n: {
+    langDir: 'locales/',
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.yml' },
+      { code: 'zh', iso: 'zh-CN', file: 'zh.yml' },
+    ],
+    defaultLocale: 'en',
+  },
 
   lodash: {
     prefix: '_',

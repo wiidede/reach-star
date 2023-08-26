@@ -1,9 +1,17 @@
 <script setup lang="ts">
 const online = useOnline()
+const switchLocalePath = useSwitchLocalePath()
 </script>
 
 <template>
   <div>
+    {{ $t('title') }}
+    <nuxt-link :to="switchLocalePath('en')">
+      English
+    </nuxt-link>
+    <nuxt-link :to="switchLocalePath('zh')">
+      中文
+    </nuxt-link>
     <Logos mb-6 />
     <Suspense>
       <ClientOnly>
