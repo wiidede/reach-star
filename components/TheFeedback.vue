@@ -12,7 +12,7 @@ let timer: number | undefined
 async function setNewContent(value: TheFeedbackContent) {
   currentData.value = value
   visible.value = true
-  timer = setTimeout(() => {
+  timer = window.setTimeout(() => {
     visible.value = false
   }, 3000)
 }
