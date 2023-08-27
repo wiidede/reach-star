@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import type { StarStore } from '~/composables/star'
-
 const { t } = useI18n()
 const localePath = useLocalePath()
 
