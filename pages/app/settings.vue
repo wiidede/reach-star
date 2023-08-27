@@ -1,5 +1,20 @@
 <script lang="ts" setup>
+import { useStorage } from '@vueuse/core'
+
 const router = useRouter()
+const switchLocalePath = useSwitchLocalePath()
+
+const fontSize = useStorage('reach-star-font-size', useCssVar('--the-font-size'))
+const fontSizeValue = computed({
+  get: () => Number.parseInt(fontSize.value) || 16,
+  set: (v: number) => (fontSize.value = `${v.toString()}px`),
+})
+function addFontSize() {
+  fontSizeValue.value = fontSizeValue.value + 2
+}
+function reduceFontSize() {
+  fontSizeValue.value = Math.max(fontSizeValue.value - 2, 12)
+}
 </script>
 
 <template>
@@ -31,7 +46,28 @@ const router = useRouter()
         </div>
       </NuxtLink>
     </div>
-    <div class="h-4" />
+    <div class="w-fit">
+      <div class="flex items-center gap-1vw">
+        <div class="i-solar-refresh-square-bold-duotone cursor-pointer text-8 text-sky-500 the-icon-primary" />
+        <div class="flex gap2">
+          <NuxtLink :to="switchLocalePath('en')">
+            English
+          </NuxtLink>
+          <NuxtLink :to="switchLocalePath('zh')">
+            中文
+          </NuxtLink>
+        </div>
+      </div>
+    </div>
+    <div class="w-fit">
+      <div class="flex items-center gap-1vw">
+        <div class="i-solar-text-circle-bold-duotone cursor-pointer text-8 text-pink-500 the-icon-primary" />
+        <div class="select-none">
+          <span class="mr2 cursor-pointer text-3 hover:op80" @click="reduceFontSize">Aa</span>
+          <span class="cursor-pointer text-5 hover:op80" @click="addFontSize">Aa</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
