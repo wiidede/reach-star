@@ -125,7 +125,7 @@ function addPoint(value: number) {
 <template>
   <div class="h-full flex flex-col gap2vh">
     <a-button type="primary" @click="router.back()">
-      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />返回
+      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ $t('button.back') }}
     </a-button>
     <div class="min-h-0 flex flex-auto flex-col gap2vh overflow-auto px2vw py2vw">
       <div
@@ -236,10 +236,10 @@ function addPoint(value: number) {
             <div class="my-1vh px5vw">
               <a-form-item>
                 <a-button type="primary" html-type="submit" class="mr2vw">
-                  确定
+                  {{ $t('button.confirm') }}
                 </a-button>
                 <a-button @click="cancelAdd">
-                  取消
+                  {{ $t('button.cancel') }}
                 </a-button>
               </a-form-item>
             </div>

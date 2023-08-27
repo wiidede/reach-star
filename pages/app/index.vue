@@ -226,7 +226,7 @@ watchEffect(() => {
       </a-form-item>
       <a-form-item>
         <a-button type="primary" html-type="submit" class="mr2vw">
-          确定
+          {{ $t('button.confirm') }}
         </a-button>
       </a-form-item>
     </a-form>
@@ -320,10 +320,10 @@ watchEffect(() => {
           <div class="my-1vh px5vw">
             <a-form-item>
               <a-button type="primary" html-type="submit" class="mr2vw">
-                确定
+                {{ $t('button.confirm') }}
               </a-button>
               <a-button @click="cancelAdd">
-                取消
+                {{ $t('button.cancel') }}
               </a-button>
             </a-form-item>
           </div>

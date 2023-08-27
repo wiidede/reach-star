@@ -1,8 +1,15 @@
 title: 摘星
+button:
+  back: 返回
+  confirm: 确认
+  cancel: 取消
 nav:
   home: 首页
   statistic: 统计
   achievement: 成就
+  goalsManage: 目标管理
+  about: 关于
+  dataManage: 数据管理
 label:
   achievement: 成就
   credits: 积分

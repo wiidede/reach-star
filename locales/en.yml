@@ -1,8 +1,15 @@
 title: Reach Star
+button:
+  back: Back
+  confirm: Confirm
+  cancel: Cancel
 nav:
   home: Home
   statistic: Statistic
   achievement: Achievement
+  goalsManage: Goals
+  about: About
+  dataManage: DataManage
 label:
   achievement: Achievement
   credits: Credits
