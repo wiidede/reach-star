@@ -1,6 +1,7 @@
 title: 摘星
 enter: 请输入
 select: 请选择
+input: 请输入
 button:
   back: 返回
   confirm: 确认
@@ -35,3 +36,11 @@ app:
   placeholderRemark: 或许会有感想
   progress: 今日进度
   add: 添加一条记录
+data:
+  export: 导出数据
+  import: 导入数据
+  clearConfirm: 清空
+  clearTip: 你确定要清空应用所有的数据吗？
+  clear: 清空数据
+  label: 数据
+

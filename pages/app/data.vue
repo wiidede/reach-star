@@ -2,6 +2,7 @@
 import type { FieldRule, FormInstance } from '@arco-design/web-vue'
 import type { TheFeedbackContent } from '~/types/common'
 
+const { t } = useI18n()
 const router = useRouter()
 const { store, defaultStore } = useStarStore()
 
@@ -44,7 +45,7 @@ function onResetData() {
 <template>
   <div class="flex flex-col gap-5vh">
     <a-button type="primary" @click="router.back()">
-      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />返回
+      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
     </a-button>
     <a-form :model="form" :rules="rules" auto-label-width @submit="onSubmit">
       <a-form-item>
@@ -53,38 +54,39 @@ function onResetData() {
             <template #icon>
               <div class="i-solar-export-bold-duotone" />
             </template>
-            导出数据
+            {{ t('data.export') }}
           </a-button>
           <a-button type="primary" html-type="submit">
             <template #icon>
               <div class="i-solar-import-bold-duotone" />
             </template>
-            导入数据
+            {{ t('data.import') }}
           </a-button>
           <a-popconfirm
             position="top"
             content-class="uno-red"
-            ok-text="清空"
+            :ok-text="t('data.clearConfirm')"
+            :cancel-text="t('button.cancel')"
             @ok="onResetData"
           >
             <template #icon>
               <div class="i-solar-info-circle-bold-duotone text-red-5" />
             </template>
             <template #content>
-              <span class="text-5">你确定要清空应用<b>所有</b>的数据吗？</span>
+              <span class="text-5">{{ t('data.clearTip') }}</span>
             </template>
             <a-button type="primary" class="uno-red">
               <template #icon>
                 <div class="i-solar-trash-bin-minimalistic-bold-duotone" />
               </template>
-              清空数据
+              {{ t('data.clear') }}
             </a-button>
           </a-popconfirm>
         </div>
       </a-form-item>
       <TheFeedback :data="feedback" />
       <a-form-item field="data" label="" hide-asterisk>
-        <a-textarea v-model="form.data" placeholder="请输入数据" :auto-size="{ minRows: 3, maxRows: 10 }" />
+        <a-textarea v-model="form.data" :placeholder="`${t('input')}${t('data.label')}`" :auto-size="{ minRows: 3, maxRows: 10 }" />
       </a-form-item>
     </a-form>
   </div>
