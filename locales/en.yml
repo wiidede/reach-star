@@ -1,6 +1,6 @@
 title: Reach Star
-enter: "Please Enter "
-select: "Please Select "
+enter: 'Please Enter '
+select: 'Please Select '
 button:
   back: Back
   confirm: Confirm
@@ -22,8 +22,8 @@ label:
   credits: Credits
 app:
   ruleGoal: Please select one goal
-  ruleStartTime: "Task not started yet, start time: "
-  ruleEndTime: "Task has ended, end time: "
+  ruleStartTime: 'Task not started yet, start time: '
+  ruleEndTime: 'Task has ended, end time: '
   ruleDayGoal: Please enter today goal (1-10000)
   ruleWeekGoal: Please enter this week goal (1-10000)
   tipReward: Good job! You have achieved {value} credits, get one reward!!

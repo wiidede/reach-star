@@ -32,8 +32,8 @@ watch(() => props.times, () => {
     placement="bottom"
     :header="false"
     :footer="false"
-    hide-cancel
-    unmount-on-close
+
+    unmount-on-close hide-cancel
   >
     <template v-if="title" #title>
       {{ title }}

@@ -21,12 +21,12 @@ const progress = computed(() => {
 </script>
 
 <template>
-  <div class="h-full flex flex-col gap-1vw items-center" :class="[`uno-${color}`]">
+  <div class="h-full flex flex-col items-center gap-1vw" :class="[`uno-${color}`]">
     <div class="the-progress-label top text-3 text-uno-8">
       {{ tip || `${displayNumber(value)} / ${displayNumber(max)}` }}
     </div>
     <div
-      class="the-progress-track w-full flex-auto min-h-0 bg-uno-1 flex flex-col-reverse rd-full overflow-hidden"
+      class="the-progress-track min-h-0 w-full flex flex-auto flex-col-reverse overflow-hidden rd-full bg-uno-1"
       :style="{ width: `${width}`, boxShadow: `inset 0px 0px 0px 2px rgb(var(--primary-4))` }"
     >
       <div
@@ -38,7 +38,7 @@ const progress = computed(() => {
       v-if="label"
       :style="{ width: `${width}` }"
       :title="label"
-      class="the-progress-label bottom text-center text-3.5 truncate text-uno-8"
+      class="the-progress-label bottom truncate text-center text-3.5 text-uno-8"
     >
       {{ label }}
     </div>

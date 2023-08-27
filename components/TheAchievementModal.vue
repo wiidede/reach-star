@@ -42,7 +42,7 @@ watch(visible, async (value) => {
     modal-animation-name="the-zoom"
     :mask-animation-name="pendingData.length ? 'none' : undefined"
   >
-    <div v-if="currentData" class="text-uno-4 flex flex-col items-center">
+    <div v-if="currentData" class="flex flex-col items-center text-uno-4">
       <div class="text-8" :class="currentData.icon" />
       <div>{{ currentData.content }}</div>
     </div>

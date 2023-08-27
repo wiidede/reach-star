@@ -32,11 +32,11 @@ function selectIcon(icon: string) {
       <slot />
     </div>
     <template #content>
-      <div class="flex flex-wrap gap-2px items-center bg-uno-1 m2vw p2vw rd-2 border-uno-5 border-2">
+      <div class="m2vw flex flex-wrap items-center gap-2px border-2 rd-2 p2vw bg-uno-1 border-uno-5">
         <div
           v-for="icon in rewardIconList"
           :key="icon"
-          class="w6 h6 text-uno-4 transition-size-300 cursor-pointer"
+          class="h6 w6 cursor-pointer text-uno-4 transition-size-300"
           :class="icon"
           @click="selectIcon(icon)"
         />
