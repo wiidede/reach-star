@@ -1,8 +1,15 @@
 title: 摘星
+enter: 请输入
+select: 请选择
 button:
   back: 返回
   confirm: 确认
   cancel: 取消
+  loadMore: 加载更多
+  loadAll: 加载全部
+time:
+  date: YYYY-MM-DD
+  dateShort: MM-DD
 nav:
   home: 首页
   statistic: 统计
@@ -13,3 +20,18 @@ nav:
 label:
   achievement: 成就
   credits: 积分
+app:
+  ruleGoal: 请选择一个目标
+  ruleStartTime: 任务还未开始噢～开始时间：
+  ruleEndTime: 任务已经结束了噢～结束时间：
+  ruleDayGoal: 请输入今日目标 (1-10000)
+  ruleWeekGoal: 请输入本周目标 (1-10000)
+  tipReward: 哇！！{value}个积分达成啦！！获得一个奖励！！！
+  tipGoal: 太棒啦！！完成目标：{name}！！！
+  tipDay: 耶！！今日目标达成啦！！！
+  tipWeek: 好耶！！本周目标达成啦！！！
+  dayGoal: 今日目标
+  weekGoal: 本周目标
+  placeholderRemark: 或许会有感想
+  progress: 今日进度
+  add: 添加一条记录

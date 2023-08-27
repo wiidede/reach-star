@@ -9,6 +9,7 @@ definePageMeta({ layout: 'app' })
 const testDay = 0
 
 const router = useRouter()
+const { t } = useI18n()
 const { store } = useStarStore((localStore: StarStore | null) => {
   if (!localStore)
     router.push('/app/about')
@@ -28,14 +29,14 @@ const recordsShow = computed(() => records.value.slice(0, recordsLength.value))
 const goalFormRef = ref<FormInstance>()
 const newGoalValidator: FieldRule['validator'] = function (value, callback) {
   if (!newGoal.value)
-    return callback('请选择一个目标')
+    return callback(t('app.ruleGoal'))
   const nowTime = dayjs().subtract(testDay, 'day').valueOf()
   const goalStartTime = newGoal.value.timeRange[0]
   if (dayjs(nowTime).isBefore(goalStartTime, 'day'))
-    return callback(`任务还未开始噢～开始时间：${dayjs(goalStartTime).format('YYYY-MM-DD')}。`)
+    return callback(`${t('app.ruleStartTime')}${dayjs(goalStartTime).format(t('time.date'))}。`)
   const goalEndTime = newGoal.value.timeRange[1]
   if (dayjs(nowTime).isAfter(goalEndTime, 'day'))
-    return callback(`任务已经结束了噢～结束时间：${dayjs(goalEndTime).format('YYYY-MM-DD')}。`)
+    return callback(`${t('app.ruleEndTime')}${dayjs(goalEndTime).format(t('time.date'))}。`)
   callback()
 }
 watch(newGoal, () => {
@@ -63,8 +64,8 @@ const newDate = ref({
   color: randomColor(),
 })
 const rules: Partial<Record<keyof typeof newDate['value'], FieldRule | FieldRule[]>> = {
-  dayGoal: [{ type: 'number', min: 1, max: 10000, required: true, message: '请输入今日目标 (1-10000)' }],
-  weekGoal: [{ type: 'number', min: 1, max: 10000, required: true, message: '请输入本周目标 (1-10000)' }],
+  dayGoal: [{ type: 'number', min: 1, max: 10000, required: true, message: t('app.ruleDayGoal') }],
+  weekGoal: [{ type: 'number', min: 1, max: 10000, required: true, message: t('app.ruleWeekGoal') }],
 }
 
 const onSetNewDate: FormInstance['$props']['onSubmit'] = function ({ errors }) {
@@ -159,7 +160,7 @@ const onAdd: FormInstance['$props']['onSubmit'] = async function ({ errors }) {
       }
       modalContent.value = {
         icon: point.icon,
-        content: `哇！！${value}个积分达成啦！！获得一个奖励！！！`,
+        content: t('app.tipReward', { value }),
         color: goalValue.color,
       }
       await nextTick()
@@ -171,7 +172,7 @@ const onAdd: FormInstance['$props']['onSubmit'] = async function ({ errors }) {
     store.value.bags.push({ type: 'goal', ..._cloneDeep(goalValue) })
     modalContent.value = {
       icon: goalValue.icon,
-      content: `太棒啦！！完成目标：${goalValue.goalName}！！！`,
+      content: t('app.tipGaol', { name: goalValue.goalName }),
       color: goalValue.color,
     }
     await nextTick()
@@ -184,7 +185,7 @@ const onAdd: FormInstance['$props']['onSubmit'] = async function ({ errors }) {
     store.value.bags.push({ type: 'day', ..._cloneDeep(dayValue) })
     modalContent.value = {
       icon: 'i-solar-star-bold-duotone',
-      content: `耶！！今日目标达成啦！！！——${dayjs(dayValue.time).format('YYYY-MM-DD')}`,
+      content: `${t('app.tipDay')}——${dayjs(dayValue.time).format(t('time.date'))}`,
       color: dayValue.color,
     }
     await nextTick()
@@ -197,7 +198,7 @@ const onAdd: FormInstance['$props']['onSubmit'] = async function ({ errors }) {
     store.value.bags.push({ type: 'week', ..._cloneDeep(weekValue) })
     modalContent.value = {
       icon: 'i-solar-stars-bold-duotone',
-      content: `好耶！！本周目标达成啦！！！——${dayjs(weekValue.time).startOf('week').add(1, 'day').format('MM-DD')} ~ ${dayjs(weekValue.time).endOf('week').add(1, 'day').format('MM-DD')}`,
+      content: `${t('app.tipWeek')}——${dayjs(weekValue.time).startOf('week').add(1, 'day').format(t('time.dateShort'))} ~ ${dayjs(weekValue.time).endOf('week').add(1, 'day').format('MM-DD')}`,
       color: weekValue.color,
     }
     await nextTick()
@@ -218,15 +219,15 @@ watchEffect(() => {
 <template>
   <div v-if="!currentDay || !currentWeek">
     <a-form :model="newDate" :rules="rules" auto-label-width @submit="onSetNewDate">
-      <a-form-item v-if="!currentDay" field="dayGoal" label="今日目标" hide-asterisk>
-        <a-input-number v-model="newDate.dayGoal" placeholder="请输入今日目标" />
+      <a-form-item v-if="!currentDay" field="dayGoal" :label="t('app.dayGoal')" hide-asterisk>
+        <a-input-number v-model="newDate.dayGoal" :placeholder="`${t('enter')}${t('app.dayGoal')}`" />
       </a-form-item>
-      <a-form-item v-if="!currentWeek" field="weekGoal" label="本周目标" hide-asterisk>
-        <a-input-number v-model="newDate.weekGoal" placeholder="请输入本周目标" />
+      <a-form-item v-if="!currentWeek" field="weekGoal" :label="t('app.weekGoal')" hide-asterisk>
+        <a-input-number v-model="newDate.weekGoal" :placeholder="`${t('enter')}${t('app.weekGoal')}`" />
       </a-form-item>
       <a-form-item>
         <a-button type="primary" html-type="submit" class="mr2vw">
-          {{ $t('button.confirm') }}
+          {{ t('button.confirm') }}
         </a-button>
       </a-form-item>
     </a-form>
@@ -237,7 +238,7 @@ watchEffect(() => {
         :value="currentDay.currentScore"
         :max="currentDay.goalScore"
         :color="currentDay.color"
-        label="今日进度"
+        :label="t('app.progress')"
       />
       <div class="max-h-full min-w-0 flex flex-auto flex-col gap2vw overflow-y-auto px2vw py-1vw">
         <TheRecordCard
@@ -247,16 +248,16 @@ watchEffect(() => {
         />
         <div v-if="!recordsLoaded" class="flex justify-center gap-4vw">
           <a-button @click="recordsLength += 100">
-            加载更多
+            {{ t('button.loadMore') }}
           </a-button>
           <a-button @click="recordsLength = records.length">
-            加载全部
+            {{ t('button.loadAll') }}
           </a-button>
         </div>
       </div>
     </div>
     <a-button type="outline" long @click="handleAdd">
-      新增一条记录
+      {{ t('app.add') }}
     </a-button>
   </div>
   <a-drawer
@@ -307,23 +308,24 @@ watchEffect(() => {
                     </div>
                   </div>
                 </a-button>
-
-                <a-button @click="router.push('/app/goals')">
-                  管理目标
-                </a-button>
+                <NuxtLink to="/app/goals">
+                  <a-button>
+                    {{ t('nav.goalsManage') }}
+                  </a-button>
+                </NuxtLink>
               </div>
             </a-form-item>
             <a-form-item field="remark" label="">
-              <a-input v-model="newRecord.remark" placeholder="或许会有感想" />
+              <a-input v-model="newRecord.remark" :placeholder="t('app.placeholderRemark')" />
             </a-form-item>
           </div>
           <div class="my-1vh px5vw">
             <a-form-item>
               <a-button type="primary" html-type="submit" class="mr2vw">
-                {{ $t('button.confirm') }}
+                {{ t('button.confirm') }}
               </a-button>
               <a-button @click="cancelAdd">
-                {{ $t('button.cancel') }}
+                {{ t('button.cancel') }}
               </a-button>
             </a-form-item>
           </div>

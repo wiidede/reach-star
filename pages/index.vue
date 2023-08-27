@@ -1,11 +1,12 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const online = useOnline()
 const switchLocalePath = useSwitchLocalePath()
 </script>
 
 <template>
   <div>
-    {{ $t('title') }}
+    {{ t('title') }}
     <nuxt-link :to="switchLocalePath('en')">
       English
     </nuxt-link>

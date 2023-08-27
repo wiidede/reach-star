@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { t } = useI18n()
-const navs = computed(() => [
+const navs = ref([
   {
     name: t('nav.home'),
     to: '/app',

@@ -1,8 +1,15 @@
 title: Reach Star
+enter: "Please Enter "
+select: "Please Select "
 button:
   back: Back
   confirm: Confirm
   cancel: Cancel
+  loadMore: Load More
+  loadAll: Load All
+time:
+  date: MM/DD/YYYY
+  dateShort: MM/DD
 nav:
   home: Home
   statistic: Statistic
@@ -13,3 +20,18 @@ nav:
 label:
   achievement: Achievement
   credits: Credits
+app:
+  ruleGoal: Please select one goal
+  ruleStartTime: "Task not started yet, start time: "
+  ruleEndTime: "Task has ended, end time: "
+  ruleDayGoal: Please enter today goal (1-10000)
+  ruleWeekGoal: Please enter this week goal (1-10000)
+  tipReward: Good job! You have achieved {value} credits, get one reward!!
+  tipGoal: Nice job! You have achieved {name} goal!
+  tipDay: You have achieved today goal!
+  tipWeek: You have achieved this week goal!
+  dayGoal: Today goal
+  weekGoal: This week goal
+  placeholderRemark: Maybe you have some thoughts
+  progress: Today progress
+  add: Add one record
