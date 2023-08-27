@@ -10,9 +10,10 @@ const testDay = 0
 
 const router = useRouter()
 const { t } = useI18n()
+const localePath = useLocalePath()
 const { store } = useStarStore((localStore: StarStore | null) => {
   if (!localStore)
-    router.push('/app/about')
+    router.push(localePath('/app/about'))
 })
 const { randomColor } = useColors()
 

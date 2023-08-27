@@ -2,8 +2,9 @@
 import { useStorage } from '@vueuse/core'
 
 const { t } = useI18n()
-const router = useRouter()
+const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
+const router = useRouter()
 
 const fontSize = useStorage('reach-star-font-size', useCssVar('--the-font-size'))
 const fontSizeValue = computed({
@@ -24,7 +25,7 @@ function reduceFontSize() {
       <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
     </a-button>
     <div class="w-fit">
-      <NuxtLink to="/app/goals">
+      <NuxtLink :to="localePath('/app/goals')">
         <div class="flex items-center gap-1vw">
           <div class="i-solar-star-angle-bold-duotone cursor-pointer text-8 text-lime the-icon-primary" />
           <div>{{ t('nav.goalsManage') }}</div>
@@ -32,7 +33,7 @@ function reduceFontSize() {
       </NuxtLink>
     </div>
     <div class="w-fit">
-      <NuxtLink to="/app/about">
+      <NuxtLink :to="localePath('/app/about')">
         <div class="flex items-center gap-1vw">
           <div class="i-solar-heart-angle-bold-duotone cursor-pointer text-8 text-rose-400 the-icon-primary" />
           <div>{{ t('nav.about') }}</div>
@@ -40,7 +41,7 @@ function reduceFontSize() {
       </NuxtLink>
     </div>
     <div class="w-fit">
-      <NuxtLink to="/app/data">
+      <NuxtLink :to="localePath('/app/data')">
         <div class="flex items-center gap-1vw">
           <div class="i-solar-database-bold-duotone cursor-pointer text-8 text-blue-500 the-icon-primary" />
           <div>{{ t('nav.dataManage') }}</div>
