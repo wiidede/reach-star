@@ -13,20 +13,20 @@ const newGoal = ref<Goal & { newRange: TheRangeData<string>[] }>()
 const goals = computed(() => store.value ? [...store.value.goals].reverse() : [])
 const formRef = ref<FormInstance>()
 const rules: Partial<Record<keyof Goal | 'newRange', FieldRule | FieldRule[]>> = {
-  goalName: [{ required: true, message: '请输入目标名称' }],
-  goalScore: [{ type: 'number', min: 1, max: 10000, required: true, message: '请输入目标总分 (1-10000)' }],
-  oneTimeContent: [{ required: true, message: '请输入单次记录名称' }],
-  oneTimeScore: [{ type: 'number', min: 1, max: 10000, required: true, message: '请输入单次记录积分 (1-10000)' }],
+  goalName: [{ required: true, message: t('goals.ruleName') }],
+  goalScore: [{ type: 'number', min: 1, max: 10000, required: true, message: t('goals.ruleScore') }],
+  oneTimeContent: [{ required: true, message: t('goals.ruleOneName') }],
+  oneTimeScore: [{ type: 'number', min: 1, max: 10000, required: true, message: t('goals.ruleOneScore') }],
   newRange: [{
     validator: (value: TheRangeData<string>[], callback) => {
       const values = value.map(item => getPercentage2Value(item.value, 0, newGoal.value?.goalScore))
       if (values.includes(0)) {
-        callback('阶段奖励的值不能为：0')
+        callback(t('goals.ruleRangeZero'))
         return
       }
       const duplicates = getDuplicates(values)
       if (duplicates.length) {
-        callback(`阶段奖励的值不能重复：${duplicates.join(', ')}`)
+        callback(t('goals.ruleRangeDuplicate'))
         return
       }
       callback()
@@ -61,7 +61,7 @@ function handleAdd() {
       renderTop: () => h('div', {
         class: 'text-center text-uno-5 whitespace-nowrap',
       }, [
-        h('div', { class: 'line-height-[2]' }, '完成'),
+        h('div', { class: 'line-height-[2]' }, t('goals.complete')),
       ]),
     }],
   }
@@ -143,7 +143,7 @@ function addPoint(value: number) {
       </div>
     </div>
     <a-button type="outline" long @click="handleAdd">
-      新增一个目标
+      {{ t('goals.add') }}
     </a-button>
     <a-drawer
       :visible="!!newGoal"
@@ -153,8 +153,8 @@ function addPoint(value: number) {
       placement="bottom"
       :header="false"
       :footer="false"
-      hide-cancel
-      unmount-on-close
+
+      unmount-on-close hide-cancel
     >
       <div
         v-if="newGoal"
@@ -176,19 +176,19 @@ function addPoint(value: number) {
           <div class="max-h-96vh flex flex-col pt-3vh">
             <div class="min-h-0 flex-auto overflow-x-hidden overflow-y-auto px5vw">
               <TheGoalContent :goal="newGoal" class="pb2vh" />
-              <a-form-item field="goalName" label="目标名称" hide-asterisk>
-                <a-input v-model="newGoal.goalName" placeholder="请输入目标名称" />
+              <a-form-item field="goalName" :label="t('goals.goalName')" hide-asterisk>
+                <a-input v-model="newGoal.goalName" :placeholder="`${t('enter')}${t('goals.goalName')}`" />
               </a-form-item>
-              <a-form-item field="goalScore" label="目标总分" hide-asterisk>
-                <a-input-number v-model="newGoal.goalScore" placeholder="请输入目标总分" />
+              <a-form-item field="goalScore" :label="t('goals.goalScore')" hide-asterisk>
+                <a-input-number v-model="newGoal.goalScore" :placeholder="`${t('enter')}${t('goals.goalScore')}`" />
               </a-form-item>
-              <a-form-item field="oneTimeContent" label="单次记录名称" hide-asterisk>
-                <a-input v-model="newGoal.oneTimeContent" placeholder="请输入单次记录名称" />
+              <a-form-item field="oneTimeContent" :label="t('goals.oneTimeContent')" hide-asterisk>
+                <a-input v-model="newGoal.oneTimeContent" :placeholder="`${t('enter')}${t('goals.oneTimeContent')}`" />
               </a-form-item>
-              <a-form-item field="oneTimeScore" label="单次记录积分" hide-asterisk>
-                <a-input-number v-model="newGoal.oneTimeScore" placeholder="请输入单次记录积分" />
+              <a-form-item field="oneTimeScore" :label="t('goals.oneTimeScore')" hide-asterisk>
+                <a-input-number v-model="newGoal.oneTimeScore" :placeholder="`${t('enter')}${t('goals.oneTimeScore')}`" />
               </a-form-item>
-              <a-form-item field="timeRange" label="完成期限">
+              <a-form-item field="timeRange" :label="t('goals.timeRange')">
                 <a-range-picker
                   v-model="newGoal.timeRange"
                   :disabled-date="(current) => dayjs(current).isBefore(dayjs().startOf('date'))"
@@ -201,7 +201,7 @@ function addPoint(value: number) {
                   </template>
                 </a-range-picker>
               </a-form-item>
-              <a-form-item field="newRange" label="阶段奖励">
+              <a-form-item field="newRange" :label="t('goals.newRange')">
                 <TheRange
                   v-model="newGoal.newRange"
                   class="w-full pb8 pt16"
@@ -211,7 +211,7 @@ function addPoint(value: number) {
                   @add-thumb="addPoint"
                 />
               </a-form-item>
-              <a-form-item field="color" label="颜色">
+              <a-form-item field="color" :label="t('goals.color')">
                 <div class="flex flex-wrap items-center gap-4px">
                   <div
                     v-for="color in colorList"
@@ -222,7 +222,7 @@ function addPoint(value: number) {
                   />
                 </div>
               </a-form-item>
-              <a-form-item field="icon" label="图标">
+              <a-form-item field="icon" :label="t('goals.icon')">
                 <div class="flex flex-wrap items-center gap-2px">
                   <div
                     v-for="icon in iconList"

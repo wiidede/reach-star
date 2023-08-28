@@ -11,6 +11,7 @@ button:
 time:
   date: YYYY-MM-DD
   dateShort: MM-DD
+  datetime: YYYY-MM-DD HH:mm
 nav:
   home: 首页
   statistic: 统计
@@ -36,6 +37,24 @@ app:
   placeholderRemark: 或许会有感想
   progress: 今日进度
   add: 添加一条记录
+goals:
+  ruleName: 请输入目标名称
+  ruleScore: 请输入目标总分 (1-10000)
+  ruleOneName: 请输入单次记录名称
+  ruleOneScore: 请输入单次记录积分 (1-10000)
+  ruleRangeZero: 阶段奖励的值不能为：0
+  ruleRangeDuplicate: 阶段奖励的值不能重复：
+  complete: 完成
+  add: 新增一个目标
+  goalName: 目标名称
+  goalScore: 目标总分
+  oneTimeContent: 单次记录名称
+  oneTimeScore: 单次记录积分
+  timeRange: 完成期限
+  newRange: 阶段奖励
+  color: 颜色
+  icon: 图标
+  clearTip: 你确定要删除这条记录吗
 data:
   export: 导出数据
   import: 导入数据

@@ -11,6 +11,7 @@ button:
 time:
   date: MM/DD/YYYY
   dateShort: MM/DD
+  datetime: HH:mm MM/DD/YYYY
 nav:
   home: Home
   statistic: Statistic
@@ -36,6 +37,24 @@ app:
   placeholderRemark: Maybe you have some thoughts
   progress: Today progress
   add: Add one record
+goals:
+  ruleName: Please enter goal name
+  ruleScore: Please enter goal total score (1-10000)
+  ruleOneName: Please enter single record name
+  ruleOneScore: Please enter single record score (1-10000)
+  ruleRangeZero: Stage reward value cannot be 0
+  ruleRangeDuplicate: 'Stage reward value cannot be duplicated: '
+  complete: Complete
+  add: Add a goal
+  goalName: Goal name
+  goalScore: Goal total score
+  oneTimeContent: Single record name
+  oneTimeScore: Single record score
+  timeRange: Completion time
+  newRange: Stage reward
+  color: Color
+  icon: Icon
+  clearTip: Are you sure to clear this record?
 data:
   export: Export Data
   import: Import Data

@@ -9,6 +9,8 @@ defineProps<{
 const emit = defineEmits<{
   (event: 'delete'): void
 }>()
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -31,7 +33,7 @@ const emit = defineEmits<{
         <span class="min-w-0 line-warp">{{ goal.oneTimeContent }}</span>
       </div>
       <div class="text-3 text-uno-5">
-        {{ dayjs(goal.timeRange[0]).format('YYYY-MM-DD') }} - {{ dayjs(goal.timeRange[1]).format('YYYY-MM-DD') }}
+        {{ dayjs(goal.timeRange[0]).format(t('time.date')) }} - {{ dayjs(goal.timeRange[1]).format(t('time.date')) }}
       </div>
     </div>
     <a-popconfirm

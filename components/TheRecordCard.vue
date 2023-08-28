@@ -4,6 +4,8 @@ import type { Rcd } from '~/types/common'
 defineProps<{
   record: Rcd
 }>()
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -29,7 +31,7 @@ defineProps<{
         {{ record.remark }}
       </div>
       <div class="text-3 text-uno-5">
-        {{ dayjs(record.time).format('YYYY-MM-DD HH:mm') }}
+        {{ dayjs(record.time).format(t('time.datetime')) }}
       </div>
     </div>
   </div>
