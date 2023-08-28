@@ -66,7 +66,6 @@ function onResetData() {
             position="top"
             content-class="uno-red"
             :ok-text="t('data.clearConfirm')"
-            :cancel-text="t('button.cancel')"
             @ok="onResetData"
           >
             <template #icon>

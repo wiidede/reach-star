@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
+import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
+import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
 
 useHead({
   bodyAttrs: {
@@ -15,26 +17,35 @@ watch(color, (value) => {
     document.body.classList.remove(oldClass)
   document.body.classList.add(`uno-${value}`)
 }, { immediate: true })
+
+const { locale } = useI18n()
+const arcoLocaleMap: Record<string, typeof enUS | undefined> = {
+  en: enUS,
+  zh: zhCN,
+}
+const arcoLocale = computed(() => arcoLocaleMap[locale.value])
 </script>
 
 <template>
-  <div
-    text="gray-700 dark:gray-200"
-    bg="#F5FEFE dark:sky-900"
-    class="h-full w-full flex flex-col-reverse gap-2vw md:flex-row"
-  >
-    <TheNav class="bg-sky-50" /> <!-- border border-t-sky/20 md:border-r-sky/20 md:border-t-transparent -->
+  <a-config-provider :locale="arcoLocale">
     <div
-      class="min-h-0 flex flex-auto flex-col md:min-w-0"
+      text="gray-700 dark:gray-200"
+      bg="#F5FEFE dark:sky-900"
+      class="h-full w-full flex flex-col-reverse gap-2vw md:flex-row"
     >
-      <TheHeader />
-      <main
-        p="x2vw y2vh"
-        class="min-h-0 flex-auto md:min-w-0"
-        text="0.85rem"
+      <TheNav class="bg-sky-50" /> <!-- border border-t-sky/20 md:border-r-sky/20 md:border-t-transparent -->
+      <div
+        class="min-h-0 flex flex-auto flex-col md:min-w-0"
       >
-        <slot />
-      </main>
+        <TheHeader />
+        <main
+          p="x2vw y2vh"
+          class="min-h-0 flex-auto md:min-w-0"
+          text="0.85rem"
+        >
+          <slot />
+        </main>
+      </div>
     </div>
-  </div>
+  </a-config-provider>
 </template>

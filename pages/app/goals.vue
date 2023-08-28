@@ -3,6 +3,8 @@ import type { FieldRule, FormInstance } from '@arco-design/web-vue'
 import TheIconSelectorVue from '~/components/TheIconSelector.vue'
 import type { Goal, TheRangeData, TheRangeRenderFn } from '~/types/common'
 
+definePageMeta({ layout: 'app' })
+
 const { t } = useI18n()
 const router = useRouter()
 const { store } = useStarStore()

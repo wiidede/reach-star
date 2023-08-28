@@ -37,7 +37,7 @@ const { t } = useI18n()
       </div>
     </div>
     <a-popconfirm
-      content="你确定要删除这条记录吗？"
+      :content="t('goals.clearTip')"
       position="top"
       :content-class="`uno-${goal.color}`"
       @ok="emit('delete')"
