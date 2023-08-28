@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
 
+useHead({
+  bodyAttrs: {
+    class: 'reach-star',
+  },
+})
+
 useStorage('reach-star-font-size', useCssVar('--the-font-size'))
 const color = useStorage('reach-star-color', 'pink')
 watch(color, (value) => {
@@ -15,7 +21,7 @@ watch(color, (value) => {
   <div
     text="gray-700 dark:gray-200"
     bg="#F5FEFE dark:sky-900"
-    class="reach-star h-full w-full flex flex-col-reverse gap-2vw md:flex-row"
+    class="h-full w-full flex flex-col-reverse gap-2vw md:flex-row"
   >
     <TheNav class="bg-sky-50" /> <!-- border border-t-sky/20 md:border-r-sky/20 md:border-t-transparent -->
     <div
