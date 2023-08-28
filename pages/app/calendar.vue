@@ -4,27 +4,25 @@ import type { Rcd, TheDescData, Time } from '~/types/common'
 definePageMeta({ layout: 'app' })
 
 const { store } = useStarStore()
-// const days = computed(() => store.value ? [...store.value.days].reverse() : [])
-// const weeks = computed(() => store.value ? [...store.value.weeks].reverse() : [])
 
 const pickerValue = ref(dayjs().valueOf())
 const week = computed(() => store.value?.weeks.find(week => theSameWeek(week.time, pickerValue.value)))
 const days = computed(() => store.value?.days.filter(day => theSameWeek(day.time, pickerValue.value)))
-// const dayBgMap = computed(() => {
-//   const map = new Map<string, string | undefined>()
-//   store.value?.days.forEach((day) => {
-//     const date = dayjs(day.time)
-//     map.set(dayjs(day.time).format('YYYY-MM-DD'), day.currentScore > 0 ? date.diff('2023-04-03', 'week') % 2 === 0 ? 'cell-sky' : 'cell-pink' : undefined)
-//   })
-//   return map
-// })
-// const dayScoreMap = computed(() => {
-//   const map = new Map<string, string>()
-//   store.value?.days.forEach((day) => {
-//     map.set(dayjs(day.time).format('YYYY-MM-DD'), day.currentScore >= 0 ? `+${displayNumber(day.currentScore)}` : '')
-//   })
-//   return map
-// })
+const dayBgMap = computed(() => {
+  const map = new Map<string, string | undefined>()
+  store.value?.days.forEach((day) => {
+    const date = dayjs(day.time)
+    map.set(dayjs(day.time).format('YYYY-MM-DD'), day.currentScore > 0 ? date.diff('2023-04-03', 'week') % 2 === 0 ? 'cell-sky' : 'cell-pink' : undefined)
+  })
+  return map
+})
+const dayScoreMap = computed(() => {
+  const map = new Map<string, string>()
+  store.value?.days.forEach((day) => {
+    map.set(dayjs(day.time).format('YYYY-MM-DD'), day.currentScore >= 0 ? `+${displayNumber(day.currentScore)}` : '')
+  })
+  return map
+})
 const dayIndex = computed(() => {
   return days.value ? days.value.findIndex(day => dayjs(day.time).isSame(pickerValue.value, 'day')) : -1
 })
@@ -65,7 +63,7 @@ function showCurrentWeek(week: Time) {
 
 <template>
   <div class="h-full w-full flex shrink-0 flex-col items-center overflow-x-hidden overflow-y-auto md:flex-row md:items-initial">
-    <!-- <a-date-picker
+    <a-date-picker
       v-model="pickerValue"
       hide-trigger
       value-format="Date"
@@ -81,7 +79,7 @@ function showCurrentWeek(week: Time) {
           </div>
         </div>
       </template>
-    </a-date-picker> -->
+    </a-date-picker>
     <div class="min-h-30vh w-full flex flex-auto gap2vw overflow-x-auto overflow-y-hidden px-2vw py-2vh md:h-auto">
       <TheProgress
         v-if="week"
