@@ -70,6 +70,7 @@ function reduceFontSize() {
         </div>
       </div>
     </div>
+    <a i-carbon-logo-github href="https://github.com/wiidede/reach-star" target="_blank" />
   </div>
 </template>
 

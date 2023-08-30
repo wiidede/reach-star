@@ -10,6 +10,7 @@
   height: fit-content;
   padding: 0.3rem 0.6rem;
 }
+
 .reach-star .arco-btn-size-medium {
   font-size: 1.2rem;
   height: fit-content;
@@ -27,7 +28,7 @@
   padding: 0;
 }
 
-.reach-star .arco-input-wrapper  {
+.reach-star .arco-input-wrapper {
   padding: 0 0.8rem;
 }
 
@@ -42,7 +43,7 @@
 
 .reach-star .arco-form-item {
   align-items: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.8rem !important;
   position: relative;
 }
 
@@ -69,12 +70,15 @@
 .reach-star .arco-btn-primary {
   background-color: rgb(var(--primary-4));
 }
+
 .reach-star .arco-btn-primary:hover {
   background-color: rgb(var(--primary-3));
 }
+
 .reach-star .arco-btn-primary:active {
   background-color: rgb(var(--primary-5));
 }
+
 .reach-star .arco-btn-primary:focus-visible {
   box-shadow: 0 0 0 0.25em rgb(var(--primary-2));
 }
@@ -83,14 +87,17 @@
   color: rgb(var(--primary-4));
   border: 1px solid rgb(var(--primary-4));
 }
+
 .reach-star .arco-btn-outline:hover {
   color: rgb(var(--primary-3));
   border: 1px solid rgb(var(--primary-3));
 }
+
 .reach-star .arco-btn-outline:active {
   color: rgb(var(--primary-5));
   border: 1px solid rgb(var(--primary-5));
 }
+
 .reach-star .arco-btn-outline:focus-visible {
   color: rgb(var(--primary-2));
   border: 1px solid rgb(var(--primary-2));
@@ -104,34 +111,42 @@
 .reach-star .arco-panel-date-inner {
   width: auto;
 }
+
 .reach-star .arco-picker-header {
   align-items: center;
 }
+
 .reach-star .arco-picker-header-icon {
   font-size: 0.6rem;
   line-height: 1;
   width: auto;
   height: auto;
 }
+
 .reach-star .arco-picker-header-title {
   font-size: 0.8rem;
   line-height: 1;
 }
+
 .reach-star .arco-picker-week-list-item {
   color: rgb(var(--primary-3));
 }
+
 .reach-star .arco-picker-row {
   padding: 0;
 }
+
 .reach-star .arco-picker-date {
   padding: 4px 2px;
 }
+
 .reach-star .arco-picker-date-value {
   font-size: 0.7rem;
   height: 1.1rem;
   line-height: 1.1rem;
   min-width: 1.1rem;
 }
+
 .reach-star .arco-picker-footer-now-wrapper {
   height: fit-content;
   line-height: 1;
@@ -144,15 +159,18 @@
 .reach-star .arco-descriptions-title {
   font-size: 1rem;
 }
+
 .reach-star .arco-descriptions-size-medium .arco-descriptions-item-label-block,
 .reach-star .arco-descriptions-size-medium .arco-descriptions-item-value-block {
   font-size: 0.8rem;
 }
+
 .reach-star .arco-tag-size-medium {
   font-size: 0.8rem;
   height: auto;
   line-height: normal;
 }
+
 .reach-star .arco-tag-size-large {
   font-size: 1.2rem;
   height: auto;
@@ -163,9 +181,11 @@
   background-color: transparent;
   padding: 0;
 }
+
 .reach-star .arco-modal-pure .arco-modal-header {
   display: none;
 }
+
 .reach-star .arco-modal-pure .arco-modal-body {
   font-size: 0.8rem;
 }
@@ -188,6 +208,7 @@
   display: flex;
   align-items: center;
 }
+
 .reach-star .arco-popconfirm-body .arco-popconfirm-icon {
   font-size: 1.2rem;
   height: auto;

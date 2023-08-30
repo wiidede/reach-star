@@ -308,7 +308,7 @@ watchEffect(() => {
                     </div>
                   </div>
                 </a-button>
-                <NuxtLink to="/app/goals">
+                <NuxtLink :to="localePath('/app/goals')">
                   <a-button>
                     {{ t('nav.goalsManage') }}
                   </a-button>

@@ -2,17 +2,11 @@
 const { t } = useI18n()
 const online = useOnline()
 const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
 </script>
 
 <template>
   <div>
-    {{ t('title') }}
-    <nuxt-link :to="switchLocalePath('en')">
-      English
-    </nuxt-link>
-    <nuxt-link :to="switchLocalePath('zh')">
-      中文
-    </nuxt-link>
     <Logos mb-6 />
     <Suspense>
       <ClientOnly>
@@ -27,11 +21,19 @@ const switchLocalePath = useSwitchLocalePath()
         </div>
       </template>
     </Suspense>
-    <InputEntry />
-    <NuxtLink to="/app">
-      <button
-        m-3 text-sm btn
-      >
+    {{ t('title') }}
+    <nuxt-link :to="switchLocalePath('en')">
+      <button m-3 text-sm btn>
+        English
+      </button>
+    </nuxt-link>
+    <nuxt-link :to="switchLocalePath('zh')">
+      <button m-3 text-sm btn>
+        中文
+      </button>
+    </nuxt-link>
+    <NuxtLink :to="localePath('/app')">
+      <button m-3 text-sm btn>
         GO APP
       </button>
     </NuxtLink>

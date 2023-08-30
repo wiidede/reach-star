@@ -30,10 +30,9 @@ const arcoLocale = computed(() => arcoLocaleMap[locale.value])
   <a-config-provider :locale="arcoLocale">
     <div
       text="gray-700 dark:gray-200"
-      bg="#F5FEFE dark:sky-900"
       class="h-full w-full flex flex-col-reverse gap-2vw md:flex-row"
     >
-      <TheNav class="bg-sky-50" /> <!-- border border-t-sky/20 md:border-r-sky/20 md:border-t-transparent -->
+      <TheNav class="bg-gray-50/20" />
       <div
         class="min-h-0 flex flex-auto flex-col md:min-w-0"
       >

@@ -14,13 +14,13 @@ time:
   datetime: HH:mm MM/DD/YYYY
 nav:
   home: Home
-  statistic: Statistic
-  achievement: Achievement
+  statistic: Data
+  achievement: Medal
   goalsManage: Goals
   about: About
   dataManage: DataManage
 label:
-  achievement: Achievement
+  achievement: Medal
   credits: Credits
 app:
   ruleGoal: Please select one goal

@@ -20,6 +20,7 @@ const achievementCount = computed(() => {
     <NuxtLink :to="localePath('/app/goals')" title="目标">
       <div class="i-solar-star-angle-bold-duotone cursor-pointer text-6 text-uno-4 the-icon-primary" />
     </NuxtLink>
+    <DarkToggle />
     <NuxtLink :to="localePath('/app/settings')" title="设置">
       <div class="i-solar-settings-minimalistic-bold-duotone cursor-pointer text-6 text-slate-500 the-icon-primary" />
     </NuxtLink>
