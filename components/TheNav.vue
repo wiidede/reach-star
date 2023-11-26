@@ -24,7 +24,7 @@ const navs = ref([
   {
     name: t('nav.achievement'),
     to: '/app/bag',
-    icon: 'i-solar-bag-smile-bold-duotone',
+    icon: 'i-solar-medal-ribbon-bold-duotone',
     color: 'purple',
   },
 ])
