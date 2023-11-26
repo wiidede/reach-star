@@ -18,7 +18,11 @@ nav:
   achievement: Medal
   goalsManage: Goals
   about: About
-  dataManage: DataManage
+  dataManage: Data Manage
+  settings: Settings
+  appManage: App Manage
+  preference: Preference
+  appInfo: App Info
 label:
   achievement: Medal
   credits: Credits

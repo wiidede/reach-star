@@ -19,6 +19,10 @@ nav:
   goalsManage: 目标管理
   about: 关于
   dataManage: 数据管理
+  settings: 设置
+  appManage: 应用管理
+  preference: 偏好
+  appInfo: 应用信息
 label:
   achievement: 成就
   credits: 积分

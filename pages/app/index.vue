@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { FieldRule, FormInstance } from '@arco-design/web-vue'
-import { useStorage } from '@vueuse/core'
 import type { StarStore } from '~/composables/star'
 import type { Goal, Rcd, TheAchievementModalContent } from '~/types/common'
 
@@ -211,7 +210,7 @@ const onAdd: FormInstance['$props']['onSubmit'] = async function ({ errors }) {
   newGoal.value = undefined
 }
 
-const color = useStorage('reach-star-color', 'pink')
+const color = useLocalStorage('reach-star-color', 'pink')
 watchEffect(() => {
   color.value = currentDay.value?.color || newDate.value.color
 })

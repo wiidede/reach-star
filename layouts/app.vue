@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useStorage } from '@vueuse/core'
 import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
 import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
 
@@ -9,8 +8,8 @@ useHead({
   },
 })
 
-useStorage('reach-star-font-size', useCssVar('--the-font-size'))
-const color = useStorage('reach-star-color', 'pink')
+useLocalStorage('reach-star-font-size', useCssVar('--the-font-size'))
+const color = useLocalStorage('reach-star-color', 'pink')
 watch(color, (value) => {
   const oldClass = Array.from(document.body.classList).find(className => className.startsWith('uno-'))
   if (oldClass)
