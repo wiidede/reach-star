@@ -239,6 +239,7 @@ watchEffect(() => {
         :max="currentDay.goalScore"
         :color="currentDay.color"
         :label="t('app.progress')"
+        :truncate-label="false"
       />
       <div class="max-h-full min-w-0 flex flex-auto flex-col gap2vw overflow-y-auto px2vw py-1vw">
         <TheRecordCard

@@ -6,6 +6,7 @@ const props = withDefaults(defineProps<{
   label: string
   tip?: string
   width?: string
+  truncateLabel?: boolean
 }>(), {
   value: 0,
   max: 100,
@@ -13,6 +14,7 @@ const props = withDefaults(defineProps<{
   label: '',
   tip: '',
   width: '4rem',
+  truncateLabel: true,
 })
 
 const progress = computed(() => {
@@ -38,7 +40,8 @@ const progress = computed(() => {
       v-if="label"
       :style="{ width: `${width}` }"
       :title="label"
-      class="the-progress-label bottom truncate text-center text-3.5 text-uno-8"
+      class="the-progress-label bottom text-center text-3.5 text-uno-8"
+      :class="{ truncate: truncateLabel }"
     >
       {{ label }}
     </div>
