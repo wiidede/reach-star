@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+definePageMeta({ layout: 'app-full' })
+
 const { t } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
@@ -18,7 +20,7 @@ function goBack() {
 
 const fontSize = useLocalStorage('reach-star-font-size', useCssVar('--the-font-size'))
 const fontSizeValue = computed({
-  get: () => Number.parseInt(fontSize.value) || 16,
+  get: () => Number.parseInt(fontSize.value) || 26,
   set: (v: number) => (fontSize.value = `${v.toString()}px`),
 })
 function addFontSize() {

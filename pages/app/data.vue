@@ -2,6 +2,8 @@
 import type { FieldRule, FormInstance } from '@arco-design/web-vue'
 import type { TheFeedbackContent } from '~/types/common'
 
+definePageMeta({ layout: 'app-full' })
+
 const { t } = useI18n()
 const router = useRouter()
 const { store, defaultStore } = useStarStore()

@@ -1,12 +1,12 @@
 import type { Bag, Goal, Rcd, Time } from '~/types/common'
 
 function get() {
-  const localValue = localStorage.getItem('to-reach-the-star')
+  const localValue = localStorage.getItem('reach-star-storage')
   return localValue ? JSON.parse(localValue) : undefined
 }
 
 function set(value: StarStore) {
-  localStorage.setItem('to-reach-the-star', JSON.stringify(value))
+  localStorage.setItem('reach-star-storage', JSON.stringify(value))
 }
 
 export interface StarStore {

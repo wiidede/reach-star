@@ -29,23 +29,11 @@ const arcoLocale = computed(() => arcoLocaleMap[locale.value])
 
 <template>
   <a-config-provider :locale="arcoLocale">
-    <div
-      text="gray-700 dark:gray-200"
-      class="h-full w-full flex flex-col-reverse gap-2vw md:flex-row"
+    <main
+      p="x2vw y2vh"
+      text="0.85rem"
     >
-      <TheNav class="bg-gray-50/20" />
-      <div
-        class="min-h-0 flex flex-auto flex-col md:min-w-0"
-      >
-        <TheHeader />
-        <main
-          p="x2vw y2vh"
-          class="min-h-0 flex-auto md:min-w-0"
-          text="0.85rem"
-        >
-          <slot />
-        </main>
-      </div>
-    </div>
+      <slot />
+    </main>
   </a-config-provider>
 </template>
