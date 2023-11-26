@@ -198,7 +198,7 @@ const onAdd: FormInstance['$props']['onSubmit'] = async function ({ errors }) {
     store.value.bags.push({ type: 'week', ..._cloneDeep(weekValue) })
     modalContent.value = {
       icon: 'i-solar-stars-bold-duotone',
-      content: `${t('app.tipWeek')}——${dayjs(weekValue.time).startOf('week').add(1, 'day').format(t('time.dateShort'))} ~ ${dayjs(weekValue.time).endOf('week').add(1, 'day').format('MM-DD')}`,
+      content: `${t('app.tipWeek')}——${dayjs(weekValue.time).startOf('week').add(1, 'day').format(t('time.dateShort'))} ~ ${dayjs(weekValue.time).endOf('week').add(1, 'day').format(t('time.dateShort'))}`,
       color: weekValue.color,
     }
     await nextTick()

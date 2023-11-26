@@ -5,16 +5,18 @@ const props = defineProps<{
   goal: Goal | undefined
 }>()
 
+const { t } = useI18n()
+
 const descData = computed(() => {
   if (!props.goal)
     return []
   const goal = props.goal
   const data: TheDescData[] = [
-    { label: '目标总分', value: displayNumber(goal.goalScore) },
-    { label: '当前积分', value: displayNumber(goal.currentScore) },
-    { label: '完成期限', value: `${dayjs(goal.timeRange[0]).format('YYYY-MM-DD')} ~ ${dayjs(goal.timeRange[1]).format('YYYY-MM-DD')}` },
+    { label: t('goals.goalScore'), value: displayNumber(goal.goalScore) },
+    { label: t('goals.currentScore'), value: displayNumber(goal.currentScore) },
+    { label: t('goals.timeRange'), value: `${dayjs(goal.timeRange[0]).format(t('time.date'))} ~ ${dayjs(goal.timeRange[1]).format(t('time.date'))}` },
   ]
-  goal.doneTime && data.push({ label: '完成时间', value: dayjs(goal.doneTime).format('YYYY-MM-DD HH:mm') })
+  goal.doneTime && data.push({ label: t('goals.completeTime'), value: dayjs(goal.doneTime).format(t('time.datetime')) })
   return data
 })
 
@@ -49,7 +51,7 @@ const rangeRenderTop: TheRangeRenderFn<string> = (data) => {
     <a-descriptions-item v-for="(item, index) of descData" :key="index" :label="item.label">
       <a-tag>{{ item.value }}</a-tag>
     </a-descriptions-item>
-    <a-descriptions-item label="阶段奖励">
+    <a-descriptions-item :label="t('goals.stageReward')">
       <TheRange
         :model-value="rangeData"
         :max="goal.goalScore"

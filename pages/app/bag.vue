@@ -3,6 +3,8 @@ import type { Bag, Goal, Rcd, Reward, TheDescData, Time } from '~/types/common'
 
 definePageMeta({ layout: 'app' })
 
+const { t } = useI18n()
+
 const { store } = useStarStore()
 
 const currentType = ref<'' | Bag['type']>('')
@@ -10,11 +12,11 @@ const typeRadios = ref<{
   label: string
   value: '' | Bag['type']
 }[]>([
-  { label: '全部', value: '' },
-  { label: '目标', value: 'goal' },
-  { label: '一日', value: 'day' },
-  { label: '一周', value: 'week' },
-  { label: '奖励', value: 'reward' },
+  { label: t('bag.total'), value: '' },
+  { label: t('bag.goal'), value: 'goal' },
+  { label: t('bag.day'), value: 'day' },
+  { label: t('bag.week'), value: 'week' },
+  { label: t('bag.reward'), value: 'reward' },
 ])
 
 const bags = computed(() => store.value ? store.value.bags.filter(item => !currentType.value || item.type === currentType.value).reverse() : [])
@@ -38,10 +40,10 @@ function showCurrentBag(bag: Bag) {
 
 function showCurrentDay(day: Time) {
   currentData.value = [
-    { label: '今日目标', value: displayNumber(day.goalScore) },
-    { label: '今日得分', value: displayNumber(day.currentScore) },
+    { label: t('app.dayGoal'), value: displayNumber(day.goalScore) },
+    { label: t('app.dayScore'), value: displayNumber(day.currentScore) },
   ]
-  currentTitle.value = dayjs(day.time).format('YYYY-MM-DD')
+  currentTitle.value = dayjs(day.time).format(t('time.date'))
   currentColor.value = day.color
   recordTimes.value = day.records.map(record => record.time)
   times.value = []
@@ -49,10 +51,10 @@ function showCurrentDay(day: Time) {
 
 function showCurrentWeek(week: Time) {
   currentData.value = [
-    { label: '本周目标', value: displayNumber(week.goalScore) },
-    { label: '本周得分', value: displayNumber(week.currentScore) },
+    { label: t('app.weekGoal'), value: displayNumber(week.goalScore) },
+    { label: t('app.weekScore'), value: displayNumber(week.currentScore) },
   ]
-  currentTitle.value = `${dayjs(week.time).startOf('week').add(1, 'day').format('YYYY-MM-DD')} ~ ${dayjs(week.time).endOf('week').add(1, 'day').format('YYYY-MM-DD')}`
+  currentTitle.value = `${dayjs(week.time).startOf('week').add(1, 'day').format(t('time.date'))} ~ ${dayjs(week.time).endOf('week').add(1, 'day').format(t('time.date'))}`
   currentColor.value = week.color
   recordTimes.value = week.records.map(record => record.time)
   times.value = []
@@ -60,11 +62,11 @@ function showCurrentWeek(week: Time) {
 
 function showCurrentGoal(goal: Goal) {
   currentData.value = [
-    { label: '目标总分', value: displayNumber(goal.goalScore) },
-    { label: '当前积分', value: displayNumber(goal.currentScore) },
-    { label: '完成期限', value: `${dayjs(goal.timeRange[0]).format('YYYY-MM-DD')} ~ ${dayjs(goal.timeRange[1]).format('YYYY-MM-DD')}` },
+    { label: t('goals.goalScore'), value: displayNumber(goal.goalScore) },
+    { label: t('goals.currentScore'), value: displayNumber(goal.currentScore) },
+    { label: t('goals.timeRange'), value: `${dayjs(goal.timeRange[0]).format(t('time.date'))} ~ ${dayjs(goal.timeRange[1]).format(t('time.date'))}` },
   ]
-  goal.doneTime && currentData.value.push({ label: '完成时间', value: dayjs(goal.doneTime).format('YYYY-MM-DD HH:mm') })
+  goal.doneTime && currentData.value.push({ label: t('goals.completeTime'), value: dayjs(goal.doneTime).format(t('time.datetime')) })
   currentTitle.value = goal.goalName
   currentColor.value = goal.color
   recordTimes.value = goal.records.map(record => record.time)
@@ -73,7 +75,7 @@ function showCurrentGoal(goal: Goal) {
 
 function showCurrentReward(reward: Reward) {
   currentData.value = [
-    { label: '获得奖励次数', value: String(reward.doneTimes.length) },
+    { label: t('bag.rewardTimes'), value: String(reward.doneTimes.length) },
   ]
   currentTitle.value = ''
   recordTimes.value = []
@@ -128,7 +130,7 @@ function showCurrentReward(reward: Reward) {
           <div
             class="text-4 transition-size-300"
           >
-            {{ item.type === 'day' ? '一日星星' : '一周星星' }}
+            {{ item.type === 'day' ? t('bag.dayStar') : t('bag.weekStar') }}
           </div>
         </div>
       </a-button>

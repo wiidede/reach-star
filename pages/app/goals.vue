@@ -203,7 +203,7 @@ function addPoint(value: number) {
                   </template>
                 </a-range-picker>
               </a-form-item>
-              <a-form-item field="newRange" :label="t('goals.newRange')">
+              <a-form-item field="newRange" :label="t('goals.stageReward')">
                 <TheRange
                   v-model="newGoal.newRange"
                   class="w-full pb8 pt16"

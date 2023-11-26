@@ -10,13 +10,13 @@ const navs = ref([
     color: 'yellow',
   },
   {
-    name: t('nav.statistic'),
+    name: t('nav.calendar'),
     to: '/app/calendar',
     icon: 'i-solar-calendar-minimalistic-bold-duotone',
     color: 'lime',
   },
   {
-    name: t('nav.statistic'),
+    name: t('nav.goals'),
     to: '/app/chart',
     icon: 'i-solar-chart-bold-duotone',
     color: 'teal',

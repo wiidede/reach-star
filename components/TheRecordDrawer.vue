@@ -7,6 +7,8 @@ const props = defineProps<{
   title?: string
 }>()
 
+const { t } = useI18n()
+
 const { store } = useStarStore()
 
 const records = computed(() => {
@@ -53,11 +55,11 @@ watch(() => props.times, () => {
         />
         <div v-if="times?.length">
           <div class="arco-descriptions-item-label-block">
-            获得奖励时间
+            {{ t('app.rewardDoneTime') }}
           </div>
           <div class="flex flex-col gap-1vh">
             <a-tag v-for="(time, index) in times" :key="index" class="w-fit">
-              {{ dayjs(time).format('YYYY-MM-DD HH:mm') }}
+              {{ dayjs(time).format(t('time.datetime')) }}
             </a-tag>
           </div>
         </div>

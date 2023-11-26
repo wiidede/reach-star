@@ -2,6 +2,8 @@ title: 摘星
 enter: 请输入
 select: 请选择
 input: 请输入
+notFound: 404 路径不存在
+offline: 你已离线
 button:
   back: 返回
   confirm: 确认
@@ -14,7 +16,8 @@ time:
   datetime: YYYY-MM-DD HH:mm
 nav:
   home: 首页
-  statistic: 统计
+  calendar: 日历
+  goals: 目标
   achievement: 成就
   goalsManage: 目标管理
   about: 关于
@@ -38,9 +41,13 @@ app:
   tipWeek: 好耶！！本周目标达成啦！！！
   dayGoal: 今日目标
   weekGoal: 本周目标
+  dayScore: 今日积分
+  weekScore: 本周积分
   placeholderRemark: 或许会有感想
   progress: 今日进度
   add: 添加一条记录
+  rewardDoneTime: 获得奖励时间
+  week: 一周
 goals:
   ruleName: 请输入目标名称
   ruleScore: 请输入目标总分 (1-10000)
@@ -55,14 +62,33 @@ goals:
   oneTimeContent: 单次记录名称
   oneTimeScore: 单次记录积分
   timeRange: 完成期限
-  newRange: 阶段奖励
+  stageReward: 阶段奖励
   color: 颜色
   icon: 图标
-  clearTip: 你确定要删除这条记录吗
+  clearTip: 你确定要删除这条记录吗？
+  currentScore: 当前积分
+  completeTime: 完成时间
 data:
   export: 导出数据
   import: 导入数据
   clearConfirm: 清空
   clearTip: 你确定要清空应用所有的数据吗？
   clear: 清空数据
-  label: 数据
+  label: 数据\
+  ruleData: 请输入正确的数据格式
+  tipFormatError: 数据格式错误～
+  importSuccess: 导入数据成功～
+  copySuccess: 已复制到剪贴板～
+  clearSuccess: 已清空所有数据～
+bag:
+  total: 全部
+  goal: 目标
+  day: 一日
+  week: 一周
+  reward: 奖励
+  rewardTimes: 获得奖励次数
+  dayStar: 一日星星
+  weekStar: 一周星星
+about:
+  start: ✨ 开始摘星之旅
+  continue: ✨ 继续摘星之旅

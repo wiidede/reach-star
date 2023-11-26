@@ -3,6 +3,8 @@ import type { Rcd, TheDescData, Time } from '~/types/common'
 
 definePageMeta({ layout: 'app' })
 
+const { t } = useI18n()
+
 const { store } = useStarStore()
 
 const pickerValue = ref(dayjs().valueOf())
@@ -12,14 +14,14 @@ const dayBgMap = computed(() => {
   const map = new Map<string, string | undefined>()
   store.value?.days.forEach((day) => {
     const date = dayjs(day.time)
-    map.set(dayjs(day.time).format('YYYY-MM-DD'), day.currentScore > 0 ? date.diff('2023-04-03', 'week') % 2 === 0 ? 'cell-sky' : 'cell-pink' : undefined)
+    map.set(dayjs(day.time).format(t('time.date')), day.currentScore > 0 ? date.diff('2023-04-03', 'week') % 2 === 0 ? 'cell-sky' : 'cell-pink' : undefined)
   })
   return map
 })
 const dayScoreMap = computed(() => {
   const map = new Map<string, string>()
   store.value?.days.forEach((day) => {
-    map.set(dayjs(day.time).format('YYYY-MM-DD'), day.currentScore >= 0 ? `+${displayNumber(day.currentScore)}` : '')
+    map.set(dayjs(day.time).format(t('time.date')), day.currentScore >= 0 ? `+${displayNumber(day.currentScore)}` : '')
   })
   return map
 })
@@ -42,20 +44,20 @@ const currentColor = ref('')
 
 function showCurrentDay(day: Time) {
   currentData.value = [
-    { label: '今日目标', value: displayNumber(day.goalScore) },
-    { label: '今日得分', value: displayNumber(day.currentScore) },
+    { label: t('app.dayGoal'), value: displayNumber(day.goalScore) },
+    { label: t('app.dayScore'), value: displayNumber(day.currentScore) },
   ]
-  currentTitle.value = dayjs(day.time).format('YYYY-MM-DD')
+  currentTitle.value = dayjs(day.time).format(t('time.date'))
   currentColor.value = day.color
   recordTimes.value = day.records.map(record => record.time)
 }
 
 function showCurrentWeek(week: Time) {
   currentData.value = [
-    { label: '本周目标', value: displayNumber(week.goalScore) },
-    { label: '本周得分', value: displayNumber(week.currentScore) },
+    { label: t('app.weekGoal'), value: displayNumber(week.goalScore) },
+    { label: t('app.weekScore'), value: displayNumber(week.currentScore) },
   ]
-  currentTitle.value = `${dayjs(week.time).startOf('week').add(1, 'day').format('YYYY-MM-DD')} ~ ${dayjs(week.time).endOf('week').add(1, 'day').format('YYYY-MM-DD')}`
+  currentTitle.value = `${dayjs(week.time).startOf('week').add(1, 'day').format(t('time.date'))} ~ ${dayjs(week.time).endOf('week').add(1, 'day').format(t('time.date'))}`
   currentColor.value = week.color
   recordTimes.value = week.records.map(record => record.time)
 }
@@ -70,12 +72,12 @@ function showCurrentWeek(week: Time) {
       class="the-date-display-picker h-fit flex-shrink-0"
     >
       <template #cell="{ date }: {date: Date}">
-        <div class="arco-picker-date" :class="dayBgMap.get(dayjs(date).format('YYYY-MM-DD'))">
+        <div class="arco-picker-date" :class="dayBgMap.get(dayjs(date).format(t('time.date')))">
           <div class="arco-picker-date-date text-uno-3">
             {{ date.getDate() }}
           </div>
           <div class="arco-picker-date-score h-3 text-2.5 text-uno-3">
-            {{ dayScoreMap.get(dayjs(date).format('YYYY-MM-DD')) }}
+            {{ dayScoreMap.get(dayjs(date).format(t('time.date'))) }}
           </div>
         </div>
       </template>
@@ -88,7 +90,7 @@ function showCurrentWeek(week: Time) {
         :max="week.goalScore"
         width="4rem"
         :color="week.color"
-        label="一周"
+        :label="t('app.week')"
         @click="showCurrentWeek(week)"
       />
       <div />
@@ -104,7 +106,7 @@ function showCurrentWeek(week: Time) {
         :max="day.goalScore"
         width="4rem"
         :color="day.color"
-        :label="dayjs(day.time).format('MM-DD')"
+        :label="dayjs(day.time).format(t('time.dateShort'))"
         @click="showCurrentDay(day)"
       />
     </div>

@@ -13,7 +13,7 @@ const form = ref({
 })
 
 const rules: Partial<Record<keyof typeof form.value, FieldRule | FieldRule[]>> = {
-  data: [{ required: true, message: '请输入正确的数据格式' }],
+  data: [{ required: true, message: t('data.ruleData') }],
 }
 
 const onSubmit: FormInstance['$props']['onSubmit'] = function ({ errors }) {
@@ -23,22 +23,22 @@ const onSubmit: FormInstance['$props']['onSubmit'] = function ({ errors }) {
     store.value = JSON.parse(form.value.data)
   }
   catch {
-    feedback.value = { content: '数据格式错误～', type: 'error' }
+    feedback.value = { content: t('data.tipFormatError'), type: 'error' }
     return
   }
-  feedback.value = { content: '导入数据成功～', type: 'success' }
+  feedback.value = { content: t('data.importSuccess'), type: 'success' }
 }
 
 async function exportData() {
   const dataStr = JSON.stringify(store.value)
   form.value.data = dataStr
   await navigator.clipboard.writeText(dataStr)
-  feedback.value = { content: '已复制到剪贴板～', type: 'success' }
+  feedback.value = { content: t('data.copySuccess'), type: 'success' }
 }
 
 function onResetData() {
   store.value = defaultStore
-  feedback.value = { content: '已清空所有数据～', type: 'success' }
+  feedback.value = { content: t('data.clearSuccess'), type: 'success' }
 }
 </script>
 
