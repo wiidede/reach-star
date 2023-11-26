@@ -10,7 +10,7 @@ useHead({
 
 const fontSize = useLocalStorage('reach-star-font-size', useCssVar('--the-font-size'))
 if (!fontSize.value)
-  fontSize.value = '26px'
+  fontSize.value = '20px'
 const color = useLocalStorage('reach-star-color', 'pink')
 watch(color, (value) => {
   const oldClass = Array.from(document.body.classList).find(className => className.startsWith('uno-'))

@@ -16,6 +16,9 @@ useHead({
 <style>
 html, body , #__nuxt{
   height: 100vh;
+  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   margin: 0;
   padding: 0;
 }

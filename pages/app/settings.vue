@@ -20,7 +20,7 @@ function goBack() {
 
 const fontSize = useLocalStorage('reach-star-font-size', useCssVar('--the-font-size'))
 const fontSizeValue = computed({
-  get: () => Number.parseInt(fontSize.value) || 26,
+  get: () => Number.parseInt(fontSize.value) || 20,
   set: (v: number) => (fontSize.value = `${v.toString()}px`),
 })
 function addFontSize() {
