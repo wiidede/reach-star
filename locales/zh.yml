@@ -3,7 +3,6 @@ enter: 请输入
 select: 请选择
 input: 请输入
 notFound: 404 路径不存在
-offline: 你已离线
 button:
   back: 返回
   confirm: 确认

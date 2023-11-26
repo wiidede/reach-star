@@ -3,7 +3,6 @@ enter: 'Please Enter '
 select: 'Please Select '
 input: 'Please Input '
 notFound: 404 Not Found
-offline: You're offline
 button:
   back: Back
   confirm: Confirm

@@ -1,41 +1,23 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const online = useOnline()
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
 </script>
 
 <template>
   <div>
-    <Logos mb-6 />
-    <Suspense>
-      <ClientOnly>
-        <PageView v-if="online" />
-        <div v-else text-gray:80>
-          {{ t('offline') }}
-        </div>
-      </ClientOnly>
-      <template #fallback>
-        <div italic op50>
-          <span animate-pulse>Loading...</span>
-        </div>
-      </template>
-    </Suspense>
-    {{ t('title') }}
-    <nuxt-link :to="switchLocalePath('en')">
-      <button m-3 text-sm btn>
+    <h1>{{ t('title') }}</h1>
+    <div class="flex flex-col gap-4">
+      <DarkToggle class="text-8 text-amber dark:text-sky" />
+      <nuxt-link :to="switchLocalePath('en')">
         English
-      </button>
-    </nuxt-link>
-    <nuxt-link :to="switchLocalePath('zh')">
-      <button m-3 text-sm btn>
+      </nuxt-link>
+      <nuxt-link :to="switchLocalePath('zh')">
         中文
-      </button>
-    </nuxt-link>
-    <NuxtLink :to="localePath('/app')">
-      <button m-3 text-sm btn>
+      </nuxt-link>
+      <NuxtLink :to="localePath('/app')">
         {{ t('about.start') }}
-      </button>
-    </NuxtLink>
+      </NuxtLink>
+    </div>
   </div>
 </template>
