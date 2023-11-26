@@ -11,7 +11,11 @@ function initStore() {
 </script>
 
 <template>
-  <div class="text-center">
+  <div class="flex flex-col items-center gap4">
+    <div i-solar-star-bold-duotone class="text-20 text-yellow-300" />
+    <h1 class="text-8">
+      {{ t('title') }}
+    </h1>
     <a-button v-if="!store" type="primary" @click="initStore">
       {{ t('about.start') }}
     </a-button>
