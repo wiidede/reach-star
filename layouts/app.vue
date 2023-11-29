@@ -3,6 +3,9 @@ import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
 import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
 
 useHead({
+  htmlAttrs: {
+    class: 'default-font-size-large',
+  },
   bodyAttrs: {
     class: 'reach-star',
   },
@@ -13,6 +16,8 @@ if (!fontSize.value)
   fontSize.value = '20px'
 const color = useLocalStorage('reach-star-color', 'pink')
 watch(color, (value) => {
+  if (!process.client)
+    return
   const oldClass = Array.from(document.body.classList).find(className => className.startsWith('uno-'))
   if (oldClass)
     document.body.classList.remove(oldClass)

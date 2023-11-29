@@ -7,7 +7,7 @@ const switchLocalePath = useSwitchLocalePath()
 const router = useRouter()
 
 const back = useLocalStorage('reach-star-back', '')
-const historyBack: string = history.state.back || '/app'
+const historyBack: string = process.client ? history.state.back : undefined || '/app'
 if (!historyBack.endsWith('/settings'))
   back.value = historyBack
 
@@ -33,9 +33,13 @@ function reduceFontSize() {
 
 <template>
   <div class="flex flex-col gap-2vh text-5">
-    <a-button type="primary" @click="goBack()">
-      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
-    </a-button>
+    <div class="flex items-center">
+      <a-button type="primary" @click="goBack()">
+        <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
+      </a-button>
+      <div class="i-solar-settings-minimalistic-bold-duotone ml4 mr1 the-icon text-6 text-slate-500" />
+      <span class="text-xl">{{ t('nav.settings') }}</span>
+    </div>
     <div class="text-4 op67">
       {{ t('nav.appManage') }}
     </div>

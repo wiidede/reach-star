@@ -46,9 +46,13 @@ function onResetData() {
 
 <template>
   <div class="flex flex-col gap-5vh">
-    <a-button type="primary" @click="router.back()">
-      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
-    </a-button>
+    <div class="flex items-center">
+      <a-button type="primary" @click="router.back()">
+        <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
+      </a-button>
+      <div class="i-solar-database-bold-duotone ml4 mr1 the-icon text-8 text-blue-500" />
+      <span class="text-xl">{{ t('nav.dataManage') }}</span>
+    </div>
     <a-form :model="form" :rules="rules" auto-label-width @submit="onSubmit">
       <a-form-item>
         <div class="flex flex-wrap gap2vw">

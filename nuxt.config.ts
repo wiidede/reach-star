@@ -45,17 +45,10 @@ export default defineNuxtConfig({
         target: 'esnext',
       },
     },
-    prerender: {
-      crawlLinks: false,
-      routes: ['/'],
-      ignore: ['/hi'],
-    },
   },
 
   routeRules: {
-    '/': { prerender: true },
-    '/app/**': { ssr: false },
-    '/*/app/**': { ssr: false },
+    '/**': { prerender: true },
   },
 
   app: {

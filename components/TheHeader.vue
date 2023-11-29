@@ -13,9 +13,11 @@ const achievementCount = computed(() => {
 
 <template>
   <header class="flex items-center justify-around gap-2vw p3">
-    <div v-if="store" class="flex flex-auto items-center gap-1vw text-5">
-      <span class="flex items-center gap-1 font-500 text-uno-5">{{ t('label.achievement') }}<a-tag size="large">{{ achievementCount }}</a-tag></span>
-      <span class="flex items-center gap-1 font-500 text-uno-5">{{ t('label.credits') }}<a-tag size="large">{{ displayNumber(store.totalScore) }}</a-tag></span>
+    <div class="flex flex-auto items-center gap-1vw text-5">
+      <ClientOnly>
+        <span v-if="store" class="flex items-center gap-1 font-500 text-uno-5">{{ t('label.achievement') }}<a-tag size="large">{{ achievementCount }}</a-tag></span>
+        <span v-if="store" class="flex items-center gap-1 font-500 text-uno-5">{{ t('label.credits') }}<a-tag size="large">{{ displayNumber(store.totalScore) }}</a-tag></span>
+      </ClientOnly>
     </div>
     <!-- <DarkToggle class="text-5 m-0.5 dark:text-sky text-amber lt-sm:hidden"/> -->
     <NuxtLink :to="localePath('/app/goals')" :title="t('nav.goalsManage')" class="flex">

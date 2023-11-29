@@ -1,11 +1,15 @@
 import type { Bag, Goal, Rcd, Time } from '~/types/common'
 
 function get() {
+  if (!process.client)
+    return
   const localValue = localStorage.getItem('reach-star-storage')
   return localValue ? JSON.parse(localValue) : undefined
 }
 
 function set(value: StarStore) {
+  if (!process.client)
+    return
   localStorage.setItem('reach-star-storage', JSON.stringify(value))
 }
 
@@ -20,7 +24,10 @@ export interface StarStore {
 
 const store = ref<null | StarStore>(null)
 
-export function useStarStore(loadedCallback?: (value: StarStore | null) => void) {
+export function useStarStore() {
+  const route = useRoute()
+  const router = useRouter()
+
   const defaultStore: StarStore = {
     totalScore: 0,
     goals: [],
@@ -32,7 +39,8 @@ export function useStarStore(loadedCallback?: (value: StarStore | null) => void)
 
   const getStore = async () => {
     const _store = await get() as StarStore | null
-    loadedCallback && loadedCallback(_store)
+    if (!_store && !route.path.endsWith('/app/about'))
+      router.push('/app/about')
     store.value = _store
   }
 

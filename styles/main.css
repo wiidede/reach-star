@@ -4,9 +4,14 @@
 @import './markdown.css';
 
 html {
-  font-size: var(--the-font-size, 16px);
+  --default-font-size: 16px;
+  font-size: var(--the-font-size, var(--default-font-size));
   scrollbar-color: rgb(var(--primary-4)) rgb(var(--primary-1));
   -webkit-tap-highlight-color: transparent;
+}
+
+html.default-font-size-large {
+  --default-font-size: 20px;
 }
 
 html,

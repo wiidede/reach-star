@@ -7,13 +7,11 @@ definePageMeta({ layout: 'app' })
 
 const testDay = 0
 
-const router = useRouter()
+const isClient = process.client
+
 const { t } = useI18n()
 const localePath = useLocalePath()
-const { store } = useStarStore((localStore: StarStore | null) => {
-  if (!localStore)
-    router.push(localePath('/app/about'))
-})
+const { store } = useStarStore()
 const { randomColor } = useColors()
 
 const modalContent = ref<TheAchievementModalContent>()
@@ -217,7 +215,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div v-if="!currentDay || !currentWeek">
+  <div v-if="(!currentDay || !currentWeek) && isClient">
     <a-form :model="newDate" :rules="rules" auto-label-width @submit="onSetNewDate">
       <a-form-item v-if="!currentDay" field="dayGoal" :label="t('app.dayGoal')" hide-asterisk>
         <a-input-number v-model="newDate.dayGoal" :placeholder="`${t('enter')}${t('app.dayGoal')}`" />
@@ -232,12 +230,12 @@ watchEffect(() => {
       </a-form-item>
     </a-form>
   </div>
-  <div v-if="store && currentDay && currentWeek" class="h-full flex flex-col gap-2vh">
+  <div v-if="(store && currentDay && currentWeek) || !isClient" class="h-full flex flex-col gap-2vh">
     <div class="min-h-0 flex flex-auto gap4vw">
       <TheProgress
-        :value="currentDay.currentScore"
-        :max="currentDay.goalScore"
-        :color="currentDay.color"
+        :value="currentDay?.currentScore"
+        :max="currentDay?.goalScore"
+        :color="currentDay?.color"
         :label="t('app.progress')"
         :truncate-label="false"
       />

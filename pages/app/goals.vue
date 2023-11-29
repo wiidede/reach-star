@@ -3,7 +3,7 @@ import type { FieldRule, FormInstance } from '@arco-design/web-vue'
 import TheIconSelectorVue from '~/components/TheIconSelector.vue'
 import type { Goal, TheRangeData, TheRangeRenderFn } from '~/types/common'
 
-definePageMeta({ layout: 'app' })
+definePageMeta({ layout: 'app-full' })
 
 const { t } = useI18n()
 const router = useRouter()
@@ -127,9 +127,13 @@ function addPoint(value: number) {
 
 <template>
   <div class="h-full flex flex-col gap2vh">
-    <a-button type="primary" @click="router.back()">
-      <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
-    </a-button>
+    <div class="flex items-center">
+      <a-button type="primary" @click="router.back()">
+        <i class="i-solar-alt-arrow-left-bold-duotone ml--2 the-icon" />{{ t('button.back') }}
+      </a-button>
+      <div class="i-solar-star-angle-bold-duotone ml4 mr1 the-icon text-8 text-lime" />
+      <span class="text-xl">{{ t('nav.goalsManage') }}</span>
+    </div>
     <div class="min-h-0 flex flex-auto flex-col gap2vh overflow-auto px2vw py2vw">
       <div
         v-for="(goal, index) in goals"
