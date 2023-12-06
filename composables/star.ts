@@ -1,14 +1,14 @@
 import type { Bag, Goal, Rcd, Time } from '~/types/common'
 
 function get() {
-  if (!process.client)
+  if (!import.meta.client)
     return
   const localValue = localStorage.getItem('reach-star-storage')
   return localValue ? JSON.parse(localValue) : undefined
 }
 
 function set(value: StarStore) {
-  if (!process.client)
+  if (!import.meta.client)
     return
   localStorage.setItem('reach-star-storage', JSON.stringify(value))
 }

@@ -16,7 +16,7 @@ if (!fontSize.value)
   fontSize.value = '20px'
 const color = useLocalStorage('reach-star-color', 'pink')
 watch(color, (value) => {
-  if (!process.client)
+  if (!import.meta.client)
     return
   const oldClass = Array.from(document.body.classList).find(className => className.startsWith('uno-'))
   if (oldClass)

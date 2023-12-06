@@ -7,7 +7,7 @@ definePageMeta({ layout: 'app' })
 
 const testDay = 0
 
-const isClient = process.client
+const isClient = import.meta.client
 
 const { t } = useI18n()
 const localePath = useLocalePath()

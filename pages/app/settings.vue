@@ -7,7 +7,7 @@ const switchLocalePath = useSwitchLocalePath()
 const router = useRouter()
 
 const back = useLocalStorage('reach-star-back', '')
-const historyBack: string = process.client ? history.state.back : undefined || '/app'
+const historyBack: string = import.meta.client ? history.state.back : undefined || '/app'
 if (!historyBack.endsWith('/settings'))
   back.value = historyBack
 
