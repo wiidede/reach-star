@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { FieldRule, FormInstance } from '@arco-design/web-vue'
-import type { StarStore } from '~/composables/star'
 import type { Goal, Rcd, TheAchievementModalContent } from '~/types/common'
 
 definePageMeta({ layout: 'app' })
