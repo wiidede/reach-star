@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { appName } from '~/constants'
-
 const color = useLocalStorage('reach-star-color', 'pink')
+const { t } = useI18n()
 
 useHead({
-  title: appName,
+  title: t('title'),
   meta: [
     {
       name: 'description',
-      content: 'Opinionated Vite Starter Template',
+      content: t('description'),
     },
     {
       name: 'theme-color',

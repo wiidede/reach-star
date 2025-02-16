@@ -23,6 +23,9 @@ async function back() {
     <div class="m0 text-8">
       {{ t('title') }}
     </div>
+    <div>
+      {{ t('description') }}
+    </div>
     <ClientOnly>
       <a-button v-if="!store" type="primary" @click="initStore">
         {{ t('about.start') }}

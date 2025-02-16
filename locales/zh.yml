@@ -91,5 +91,6 @@ time:
   dateShort: MM-DD
   datetime: YYYY-MM-DD HH:mm
 title: 摘星
+description: 一个多彩的目标管理应用
 welcome: 欢迎
 welcome-to-reach-star: 欢迎使用摘星✨
