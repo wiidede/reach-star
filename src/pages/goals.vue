@@ -134,18 +134,20 @@ function handleAddData(value: number) {
       <span class="text-xl">{{ t('nav.goalsManage') }}</span>
     </div>
     <div class="min-h-0 flex flex-auto flex-col gap2vh overflow-auto px2vw py2vw">
-      <div
-        v-for="(goal, index) in goals"
-        :key="index"
-        class="rd-2vw px3vw py1vw shadow"
-        :class="`uno-${goal.color}`"
-        :style="{
-          background: 'rgb(var(--primary-1))',
-          boxShadow: `inset 0px 0px 1px 1px rgb(var(--primary-3)), 1px 2px 12px 0px rgb(var(--primary-3)), 0 1px 6px 0px #00000020`,
-        }"
-      >
-        <TheGoalContent :goal="goal" show-delete @delete="handleDelete(goal)" />
-      </div>
+      <ClientOnly>
+        <div
+          v-for="(goal, index) in goals"
+          :key="index"
+          class="rd-2vw px3vw py1vw shadow"
+          :class="`uno-${goal.color}`"
+          :style="{
+            background: 'rgb(var(--primary-1))',
+            boxShadow: `inset 0px 0px 1px 1px rgb(var(--primary-3)), 1px 2px 12px 0px rgb(var(--primary-3)), 0 1px 6px 0px #00000020`,
+          }"
+        >
+          <TheGoalContent :goal="goal" show-delete @delete="handleDelete(goal)" />
+        </div>
+      </ClientOnly>
     </div>
     <a-button type="outline" long @click="handleAdd">
       {{ t('goals.add') }}
