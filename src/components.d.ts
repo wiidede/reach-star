@@ -38,8 +38,6 @@ declare module 'vue' {
     TheInput: typeof import('./components/TheInput.vue')['default']
     TheNav: typeof import('./components/TheNav.vue')['default']
     TheProgress: typeof import('./components/TheProgress.vue')['default']
-    TheRange: typeof import('./components/TheRange/TheRange.vue')['default']
-    TheRangeThumb: typeof import('./components/TheRange/TheRangeThumb.vue')['default']
     TheRecordCard: typeof import('./components/TheRecordCard.vue')['default']
     TheRecordDrawer: typeof import('./components/TheRecordDrawer.vue')['default']
     TheRender: typeof import('./components/TheRender.vue')['default']
