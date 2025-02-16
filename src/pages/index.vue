@@ -152,7 +152,7 @@ const onAdd: FormInstance['$props']['onSubmit'] = async function ({ errors }) {
     store.value.bags.push({ type: 'goal', ...structuredClone(toRaw(goalValue)) })
     modalContent.value = {
       icon: goalValue.icon,
-      content: t('app.tipGaol', { name: goalValue.goalName }),
+      content: t('app.tipGoal', { name: goalValue.goalName }),
       color: goalValue.color,
     }
     await nextTick()
@@ -290,7 +290,10 @@ watchEffect(() => {
                 </a-button>
                 <RouterLink to="/goals">
                   <a-button>
-                    {{ t('nav.goalsManage') }}
+                    <div class="i-solar-star-angle-bold-duotone" />
+                    <div class="text-4">
+                      {{ t('nav.goalsManage') }}
+                    </div>
                   </a-button>
                 </RouterLink>
               </div>
