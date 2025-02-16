@@ -154,7 +154,7 @@ function handleAddData(value: number) {
     </a-button>
     <a-drawer
       :visible="!!newGoal"
-      height="fit-content"
+      height="auto"
       class="full-drawer"
       :drawer-style="{ maxHeight: '100vh', background: 'transparent' }"
       placement="bottom"

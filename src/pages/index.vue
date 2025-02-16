@@ -243,7 +243,7 @@ watchEffect(() => {
   </div>
   <a-drawer
     :visible="!!newRecord"
-    height="fit-content"
+    height="auto"
     class="full-drawer"
     :drawer-style="{ maxHeight: '100vh', background: 'transparent' }"
     placement="bottom"
