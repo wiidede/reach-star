@@ -39,8 +39,8 @@ const currentDay = computed(() => store.value?.days.find(day => dayjs().subtract
 const currentWeek = computed(() => store.value?.weeks.find(week => theSameWeek(dayjs().subtract(testDay, 'day').valueOf(), week.time)))
 
 const newDate = ref({
-  dayGoal: 0,
-  weekGoal: 0,
+  dayGoal: 10,
+  weekGoal: 50,
   color: randomColor(),
 })
 const rules: Partial<Record<keyof typeof newDate['value'], FieldRule | FieldRule[]>> = {

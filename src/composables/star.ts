@@ -29,7 +29,24 @@ export function useStarStore() {
 
   const defaultStore: StarStore = {
     totalScore: 0,
-    goals: [],
+    goals: [
+      {
+        goalName: 'Welcome',
+        goalScore: 1,
+        oneTimeContent: 'Welcome to Reach Star ✨',
+        oneTimeScore: 1,
+        color: 'yellow',
+        icon: 'i-solar-star-shine-bold-duotone',
+        timeRange: [
+          1680940800000,
+          4102329600000,
+        ],
+        points: [],
+        currentScore: 0,
+        doneTime: 0,
+        records: [],
+      },
+    ],
     records: [],
     days: [],
     weeks: [],
