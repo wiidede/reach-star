@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.56.3",
-    "@popperjs/core": "^2.11.8",
     "@unhead/vue": "^2.0.0-alpha.16",
     "@unocss/reset": "^65.5.0",
     "@vueuse/core": "^12.7.0",
@@ -23,7 +22,6 @@
     "beasties": "^0.2.0",
     "dayjs": "^1.11.13",
     "nprogress": "^0.2.0",
-    "v-calendar": "^3.1.2",
     "vue": "^3.5.13",
     "vue-i18n": "^11.1.1",
     "vue-range-multi": "^0.4.2",
