@@ -572,6 +572,8 @@
 
 /* .uno-slate, .uno-gray, .uno-zinc, .uno-neutral, .uno-stone, .uno-red, .uno-orange, .uno-amber, .uno-yellow, .uno-lime, .uno-green, .uno-emerald, .uno-teal, .uno-cyan, .uno-sky, .uno-blue, .uno-indigo, .uno-violet, .uno-purple, .uno-fuchsia, .uno-pink, .uno-rose { */
 [class*='uno-'] {
+  --color-bg-popup: rgb(var(--primary-1));
+  --color-bg-2: rgb(var(--primary-1));
   --color-text-1: rgb(var(--primary-9));
   --color-text-2: rgb(var(--primary-7));
   --color-text-3: rgb(var(--primary-5));
