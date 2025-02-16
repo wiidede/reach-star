@@ -53,8 +53,7 @@ const rangeRenderTop: TheRangeRenderFn<string> = (data) => {
     </a-descriptions-item>
     <a-descriptions-item :label="t('goals.stageReward')">
       <TheRange
-        v-if="rangeData?.length"
-        :model-value="rangeData"
+        :model-value="rangeData || []"
         :max="goal.goalScore"
         :progress="goal.currentScore / goal.goalScore * 100"
         class="pointer-events-none w-full"
