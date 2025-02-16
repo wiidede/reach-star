@@ -24,6 +24,7 @@ export interface StarStore {
 const store = ref<null | StarStore>(null)
 
 export function useStarStore() {
+  const { t } = useI18n()
   const route = useRoute()
   const router = useRouter()
 
@@ -31,9 +32,9 @@ export function useStarStore() {
     totalScore: 0,
     goals: [
       {
-        goalName: 'Welcome',
+        goalName: t('welcome'),
         goalScore: 1,
-        oneTimeContent: 'Welcome to Reach Star ✨',
+        oneTimeContent: t('welcome-to-reach-star'),
         oneTimeScore: 1,
         color: 'yellow',
         icon: 'i-solar-star-shine-bold-duotone',
