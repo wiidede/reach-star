@@ -8,6 +8,13 @@ function initStore() {
   store.value = defaultStore
   router.push('/')
 }
+
+async function back() {
+  if (window.history.length > 2)
+    router.go(-1)
+  else
+    router.push('/')
+}
 </script>
 
 <template>
@@ -20,7 +27,7 @@ function initStore() {
       <a-button v-if="!store" type="primary" @click="initStore">
         {{ t('about.start') }}
       </a-button>
-      <a-button v-else type="primary" @click="router.back()">
+      <a-button v-else type="primary" @click="back()">
         {{ t('about.continue') }}
       </a-button>
     </ClientOnly>
