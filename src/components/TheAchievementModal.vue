@@ -43,7 +43,7 @@ watch(visible, async (value) => {
     :mask-animation-name="pendingData.length ? 'none' : undefined"
   >
     <div v-if="currentData" class="flex flex-col items-center text-uno-4">
-      <div class="text-8" :class="currentData.icon" />
+      <div class="text-8xl" :class="currentData.icon" />
       <div>{{ currentData.content }}</div>
     </div>
   </a-modal>
