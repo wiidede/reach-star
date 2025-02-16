@@ -158,6 +158,7 @@
 
 .reach-star .arco-descriptions-title {
   font-size: 1rem;
+  --at-apply: line-warp;
 }
 
 .reach-star .arco-descriptions-size-medium .arco-descriptions-item-label-block,
@@ -197,10 +198,6 @@
 
 .reach-star .full-drawer .arco-drawer-body {
   padding: 2vh 2vw;
-}
-
-.reach-star .arco-descriptions-title {
-  --at-apply: line-warp;
 }
 
 .reach-star .arco-popconfirm-popup-content .arco-popconfirm-body {
