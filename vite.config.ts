@@ -75,8 +75,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'Reach Star',
+        short_name: 'Reach Star',
         theme_color: '#ffffff',
         icons: [
           {
