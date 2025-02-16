@@ -1,0 +1,219 @@
+.reach-star {
+  --border-radius-none: 0;
+  --border-radius-small: 1rem;
+  --border-radius-medium: 1rem;
+  --border-radius-large: 1rem;
+}
+
+.reach-star .arco-btn-size-mini {
+  font-size: 1rem;
+  height: fit-content;
+  padding: 0.3rem 0.6rem;
+}
+
+.reach-star .arco-btn-size-medium {
+  font-size: 1.2rem;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+}
+
+.reach-star .arco-picker-size-medium {
+  height: auto;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
+}
+
+.reach-star .arco-picker-size-medium input {
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.reach-star .arco-input-wrapper {
+  padding: 0 0.8rem;
+}
+
+.reach-star .arco-textarea-wrapper,
+.reach-star .arco-textarea {
+  font-size: 1rem;
+}
+
+.reach-star .arco-input-wrapper .arco-input.arco-input-size-medium {
+  font-size: 1rem;
+}
+
+.reach-star .arco-form-item {
+  align-items: center;
+  margin-bottom: 0.8rem !important;
+  position: relative;
+}
+
+.reach-star .arco-form .arco-form-item-label {
+  font-size: 0.85rem;
+}
+
+.reach-star .arco-form-item-message {
+  font-size: 0.6rem;
+  position: absolute;
+  bottom: -0.7rem;
+  line-height: normal;
+  min-height: 0;
+}
+
+.reach-star .arco-input-number-mode-embed .arco-input-number-step {
+  position: absolute;
+  top: 4px;
+  right: 0.8rem;
+  bottom: 4px;
+  width: 1.2rem;
+}
+
+.reach-star .arco-btn-primary {
+  background-color: rgb(var(--primary-4));
+}
+
+.reach-star .arco-btn-primary:hover {
+  background-color: rgb(var(--primary-3));
+}
+
+.reach-star .arco-btn-primary:active {
+  background-color: rgb(var(--primary-5));
+}
+
+.reach-star .arco-btn-primary:focus-visible {
+  box-shadow: 0 0 0 0.25em rgb(var(--primary-2));
+}
+
+.reach-star .arco-btn-outline {
+  color: rgb(var(--primary-4));
+  border: 1px solid rgb(var(--primary-4));
+}
+
+.reach-star .arco-btn-outline:hover {
+  color: rgb(var(--primary-3));
+  border: 1px solid rgb(var(--primary-3));
+}
+
+.reach-star .arco-btn-outline:active {
+  color: rgb(var(--primary-5));
+  border: 1px solid rgb(var(--primary-5));
+}
+
+.reach-star .arco-btn-outline:focus-visible {
+  color: rgb(var(--primary-2));
+  border: 1px solid rgb(var(--primary-2));
+}
+
+.reach-star .arco-link {
+  color: rgb(var(--primary-5));
+  font-size: 0.8rem;
+}
+
+.reach-star .arco-panel-date-inner {
+  width: auto;
+}
+
+.reach-star .arco-picker-header {
+  align-items: center;
+}
+
+.reach-star .arco-picker-header-icon {
+  font-size: 0.6rem;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+.reach-star .arco-picker-header-title {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.reach-star .arco-picker-week-list-item {
+  color: rgb(var(--primary-3));
+}
+
+.reach-star .arco-picker-row {
+  padding: 0;
+}
+
+.reach-star .arco-picker-date {
+  padding: 4px 2px;
+}
+
+.reach-star .arco-picker-date-value {
+  font-size: 0.7rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  min-width: 1.1rem;
+}
+
+.reach-star .arco-picker-footer-now-wrapper {
+  height: fit-content;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.reach-star .arco-descriptions-title {
+  font-size: 1rem;
+}
+
+.reach-star .arco-descriptions-size-medium .arco-descriptions-item-label-block,
+.reach-star .arco-descriptions-size-medium .arco-descriptions-item-value-block {
+  font-size: 0.8rem;
+}
+
+.reach-star .arco-tag-size-medium {
+  font-size: 0.8rem;
+  height: auto;
+  line-height: normal;
+}
+
+.reach-star .arco-tag-size-large {
+  font-size: 1.2rem;
+  height: auto;
+  line-height: normal;
+}
+
+.reach-star .arco-modal-pure {
+  background-color: transparent;
+  padding: 0;
+}
+
+.reach-star .arco-modal-pure .arco-modal-header {
+  display: none;
+}
+
+.reach-star .arco-modal-pure .arco-modal-body {
+  font-size: 0.8rem;
+}
+
+.reach-star .arco-radio-button {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.reach-star .full-drawer .arco-drawer-body {
+  padding: 2vh 2vw;
+}
+
+.reach-star .arco-descriptions-title {
+  --at-apply: line-warp;
+}
+
+.reach-star .arco-popconfirm-body {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.reach-star .arco-popconfirm-body .arco-popconfirm-icon {
+  font-size: 1.2rem;
+  height: auto;
+}
+
+.arco-btn {
+  width: fit-content;
+}

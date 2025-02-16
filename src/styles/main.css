@@ -1,4 +1,17 @@
-@import './markdown.css';
+@import './arco.css';
+@import './arco-color.css';
+@import './common.css';
+
+html {
+  --default-font-size: 16px;
+  font-size: var(--the-font-size, var(--default-font-size));
+  scrollbar-color: rgb(var(--primary-4)) rgb(var(--primary-1));
+  -webkit-tap-highlight-color: transparent;
+}
+
+html.default-font-size-large {
+  --default-font-size: 20px;
+}
 
 html,
 body,
@@ -8,22 +21,35 @@ body,
   padding: 0;
 }
 
+.reach-star {
+  font-size: 0.875rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--primary-4));
+  border-radius: 4px;
+  --at-apply: shadow;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(var(--primary-1));
+  border-radius: 4px;
+}
+
+::selection {
+  color: rgb(var(--primary-9));
+  background-color: rgb(var(--primary-3));
+}
+
 html.dark {
-  background: #121212;
   color-scheme: dark;
 }
 
-#nprogress {
-  pointer-events: none;
-}
-
-#nprogress .bar {
-  background: rgb(13, 148, 136);
-  opacity: 0.75;
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
+a:focus-visible {
+  outline: none;
 }

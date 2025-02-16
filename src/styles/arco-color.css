@@ -1,0 +1,601 @@
+.uno-slate {
+  --primary-1: 248, 250, 252;
+  --primary-2: 241, 245, 249;
+  --primary-3: 226, 232, 240;
+  --primary-4: 203, 213, 225;
+  --primary-5: 148, 163, 184;
+  --primary-6: 100, 116, 139;
+  --primary-7: 71, 85, 105;
+  --primary-8: 51, 65, 89;
+  --primary-9: 30, 41, 59;
+  --primary-10: 15, 23, 42;
+}
+
+.dark .uno-slate {
+  --primary-1: 15, 23, 42;
+  --primary-2: 30, 41, 59;
+  --primary-3: 51, 65, 89;
+  --primary-4: 71, 85, 105;
+  --primary-5: 100, 116, 139;
+  --primary-6: 148, 163, 184;
+  --primary-7: 203, 213, 225;
+  --primary-8: 226, 232, 240;
+  --primary-9: 241, 245, 249;
+  --primary-10: 248, 250, 252;
+}
+
+.uno-gray {
+  --primary-1: 249, 250, 251;
+  --primary-2: 243, 244, 246;
+  --primary-3: 229, 231, 235;
+  --primary-4: 209, 213, 219;
+  --primary-5: 156, 163, 175;
+  --primary-6: 107, 114, 128;
+  --primary-7: 75, 85, 99;
+  --primary-8: 55, 65, 81;
+  --primary-9: 31, 41, 55;
+  --primary-10: 17, 24, 39;
+}
+
+.dark .uno-gray {
+  --primary-1: 17, 24, 39;
+  --primary-2: 31, 41, 55;
+  --primary-3: 55, 65, 81;
+  --primary-4: 75, 85, 99;
+  --primary-5: 107, 114, 128;
+  --primary-6: 156, 163, 175;
+  --primary-7: 209, 213, 219;
+  --primary-8: 229, 231, 235;
+  --primary-9: 243, 244, 246;
+  --primary-10: 249, 250, 251;
+}
+
+.uno-zinc {
+  --primary-1: 250, 250, 250;
+  --primary-2: 244, 244, 245;
+  --primary-3: 228, 228, 231;
+  --primary-4: 212, 212, 216;
+  --primary-5: 161, 161, 170;
+  --primary-6: 113, 113, 122;
+  --primary-7: 82, 82, 91;
+  --primary-8: 63, 63, 70;
+  --primary-9: 39, 39, 42;
+  --primary-10: 24, 24, 27;
+}
+
+.dark .uno-zinc {
+  --primary-1: 24, 24, 27;
+  --primary-2: 39, 39, 42;
+  --primary-3: 63, 63, 70;
+  --primary-4: 82, 82, 91;
+  --primary-5: 113, 113, 122;
+  --primary-6: 161, 161, 170;
+  --primary-7: 212, 212, 216;
+  --primary-8: 228, 228, 231;
+  --primary-9: 244, 244, 245;
+  --primary-10: 250, 250, 250;
+}
+
+.uno-neutral {
+  --primary-1: 250, 250, 250;
+  --primary-2: 245, 245, 245;
+  --primary-3: 229, 229, 229;
+  --primary-4: 212, 212, 212;
+  --primary-5: 163, 163, 163;
+  --primary-6: 115, 115, 115;
+  --primary-7: 82, 82, 82;
+  --primary-8: 64, 64, 64;
+  --primary-9: 38, 38, 38;
+  --primary-10: 23, 23, 23;
+}
+
+.dark .uno-neutral {
+  --primary-1: 23, 23, 23;
+  --primary-2: 38, 38, 38;
+  --primary-3: 64, 64, 64;
+  --primary-4: 82, 82, 82;
+  --primary-5: 115, 115, 115;
+  --primary-6: 163, 163, 163;
+  --primary-7: 212, 212, 212;
+  --primary-8: 229, 229, 229;
+  --primary-9: 245, 245, 245;
+  --primary-10: 250, 250, 250;
+}
+
+.uno-stone {
+  --primary-1: 250, 250, 249;
+  --primary-2: 245, 245, 244;
+  --primary-3: 231, 229, 228;
+  --primary-4: 214, 211, 209;
+  --primary-5: 168, 162, 158;
+  --primary-6: 120, 113, 108;
+  --primary-7: 87, 83, 78;
+  --primary-8: 68, 64, 60;
+  --primary-9: 41, 37, 36;
+  --primary-10: 28, 25, 23;
+}
+
+.dark .uno-stone {
+  --primary-1: 28, 25, 23;
+  --primary-2: 41, 37, 36;
+  --primary-3: 68, 64, 60;
+  --primary-4: 87, 83, 78;
+  --primary-5: 120, 113, 108;
+  --primary-6: 168, 162, 158;
+  --primary-7: 214, 211, 209;
+  --primary-8: 231, 229, 228;
+  --primary-9: 245, 245, 244;
+  --primary-10: 250, 250, 249;
+}
+
+.uno-red {
+  --primary-1: 254, 242, 242;
+  --primary-2: 254, 226, 226;
+  --primary-3: 254, 202, 202;
+  --primary-4: 252, 165, 165;
+  --primary-5: 248, 113, 113;
+  --primary-6: 239, 68, 68;
+  --primary-7: 220, 38, 38;
+  --primary-8: 185, 28, 28;
+  --primary-9: 153, 27, 27;
+  --primary-10: 127, 29, 29;
+}
+
+.dark .uno-red {
+  --primary-1: 127, 29, 29;
+  --primary-2: 153, 27, 27;
+  --primary-3: 185, 28, 28;
+  --primary-4: 220, 38, 38;
+  --primary-5: 239, 68, 68;
+  --primary-6: 248, 113, 113;
+  --primary-7: 252, 165, 165;
+  --primary-8: 254, 202, 202;
+  --primary-9: 254, 226, 226;
+  --primary-10: 254, 242, 242;
+}
+
+.uno-orange {
+  --primary-1: 255, 247, 237;
+  --primary-2: 255, 237, 213;
+  --primary-3: 254, 215, 170;
+  --primary-4: 253, 186, 116;
+  --primary-5: 251, 146, 60;
+  --primary-6: 249, 115, 22;
+  --primary-7: 234, 88, 12;
+  --primary-8: 194, 65, 12;
+  --primary-9: 154, 52, 18;
+  --primary-10: 124, 45, 18;
+}
+
+.dark .uno-orange {
+  --primary-1: 124, 45, 18;
+  --primary-2: 154, 52, 18;
+  --primary-3: 194, 65, 12;
+  --primary-4: 234, 88, 12;
+  --primary-5: 249, 115, 22;
+  --primary-6: 251, 146, 60;
+  --primary-7: 253, 186, 116;
+  --primary-8: 254, 215, 170;
+  --primary-9: 254, 237, 213;
+  --primary-10: 255, 247, 237;
+}
+
+.uno-amber {
+  --primary-1: 255, 251, 235;
+  --primary-2: 254, 243, 199;
+  --primary-3: 253, 230, 138;
+  --primary-4: 252, 211, 77;
+  --primary-5: 251, 191, 36;
+  --primary-6: 245, 158, 11;
+  --primary-7: 217, 119, 6;
+  --primary-8: 180, 83, 9;
+  --primary-9: 146, 64, 14;
+  --primary-10: 120, 53, 15;
+}
+
+.dark .uno-amber {
+  --primary-1: 120, 53, 15;
+  --primary-2: 146, 64, 14;
+  --primary-3: 180, 83, 9;
+  --primary-4: 217, 119, 6;
+  --primary-5: 245, 158, 11;
+  --primary-6: 251, 191, 36;
+  --primary-7: 252, 211, 77;
+  --primary-8: 253, 230, 138;
+  --primary-9: 254, 243, 199;
+  --primary-10: 255, 251, 235;
+}
+
+.uno-yellow {
+  --primary-1: 254, 252, 232;
+  --primary-2: 254, 249, 195;
+  --primary-3: 254, 240, 138;
+  --primary-4: 253, 224, 71;
+  --primary-5: 250, 204, 21;
+  --primary-6: 234, 179, 8;
+  --primary-7: 202, 138, 4;
+  --primary-8: 161, 98, 7;
+  --primary-9: 133, 77, 14;
+  --primary-10: 113, 63, 18;
+}
+
+.dark .uno-yellow {
+  --primary-1: 113, 63, 18;
+  --primary-2: 133, 77, 14;
+  --primary-3: 161, 98, 7;
+  --primary-4: 202, 138, 4;
+  --primary-5: 234, 179, 8;
+  --primary-6: 250, 204, 21;
+  --primary-7: 253, 224, 71;
+  --primary-8: 254, 240, 138;
+  --primary-9: 254, 249, 195;
+  --primary-10: 254, 252, 232;
+}
+
+.uno-lime {
+  --primary-1: 247, 254, 231;
+  --primary-2: 236, 252, 203;
+  --primary-3: 217, 249, 157;
+  --primary-4: 190, 242, 100;
+  --primary-5: 163, 230, 53;
+  --primary-6: 132, 204, 22;
+  --primary-7: 101, 163, 13;
+  --primary-8: 77, 124, 15;
+  --primary-9: 63, 98, 18;
+  --primary-10: 54, 83, 20;
+}
+
+.dark .uno-lime {
+  --primary-1: 54, 83, 20;
+  --primary-2: 63, 98, 18;
+  --primary-3: 77, 124, 15;
+  --primary-4: 101, 163, 13;
+  --primary-5: 132, 204, 22;
+  --primary-6: 163, 230, 53;
+  --primary-7: 190, 242, 100;
+  --primary-8: 217, 249, 157;
+  --primary-9: 236, 252, 203;
+  --primary-10: 247, 254, 231;
+}
+
+.uno-green {
+  --primary-1: 240, 253, 244;
+  --primary-2: 220, 252, 231;
+  --primary-3: 187, 247, 208;
+  --primary-4: 134, 239, 172;
+  --primary-5: 74, 222, 128;
+  --primary-6: 34, 197, 94;
+  --primary-7: 22, 163, 84;
+  --primary-8: 21, 128, 83;
+  --primary-9: 22, 101, 52;
+  --primary-10: 20, 83, 45;
+}
+
+.dark .uno-green {
+  --primary-1: 20, 83, 45;
+  --primary-2: 22, 101, 52;
+  --primary-3: 22, 128, 83;
+  --primary-4: 34, 197, 94;
+  --primary-5: 74, 222, 128;
+  --primary-6: 134, 239, 172;
+  --primary-7: 187, 247, 208;
+  --primary-8: 220, 252, 231;
+  --primary-9: 240, 253, 244;
+  --primary-10: 240, 253, 244;
+}
+
+.uno-emerald {
+  --primary-1: 236, 253, 245;
+  --primary-2: 209, 250, 229;
+  --primary-3: 167, 243, 208;
+  --primary-4: 110, 231, 183;
+  --primary-5: 52, 211, 153;
+  --primary-6: 16, 185, 129;
+  --primary-7: 5, 150, 105;
+  --primary-8: 4, 120, 87;
+  --primary-9: 6, 95, 70;
+  --primary-10: 6, 78, 59;
+}
+
+.dark .uno-emerald {
+  --primary-1: 6, 78, 59;
+  --primary-2: 6, 95, 70;
+  --primary-3: 5, 150, 105;
+  --primary-4: 16, 185, 129;
+  --primary-5: 52, 211, 153;
+  --primary-6: 110, 231, 183;
+  --primary-7: 167, 243, 208;
+  --primary-8: 209, 250, 229;
+  --primary-9: 236, 253, 245;
+  --primary-10: 236, 253, 245;
+}
+
+.uno-teal {
+  --primary-1: 240, 253, 250;
+  --primary-2: 204, 251, 241;
+  --primary-3: 153, 246, 228;
+  --primary-4: 94, 234, 212;
+  --primary-5: 45, 212, 191;
+  --primary-6: 20, 184, 166;
+  --primary-7: 13, 148, 136;
+  --primary-8: 15, 118, 110;
+  --primary-9: 17, 94, 84;
+  --primary-10: 19, 78, 74;
+}
+
+.dark .uno-teal {
+  --primary-1: 19, 78, 74;
+  --primary-2: 17, 94, 84;
+  --primary-3: 13, 148, 136;
+  --primary-4: 20, 184, 166;
+  --primary-5: 45, 212, 191;
+  --primary-6: 94, 234, 212;
+  --primary-7: 153, 246, 228;
+  --primary-8: 204, 251, 241;
+  --primary-9: 240, 253, 250;
+  --primary-10: 240, 253, 250;
+}
+
+.uno-cyan {
+  --primary-1: 236, 254, 255;
+  --primary-2: 207, 250, 254;
+  --primary-3: 165, 243, 252;
+  --primary-4: 103, 232, 249;
+  --primary-5: 34, 211, 238;
+  --primary-6: 6, 182, 212;
+  --primary-7: 8, 145, 178;
+  --primary-8: 14, 116, 144;
+  --primary-9: 21, 94, 117;
+  --primary-10: 22, 78, 99;
+}
+
+.dark .uno-cyan {
+  --primary-1: 22, 78, 99;
+  --primary-2: 21, 94, 117;
+  --primary-3: 8, 145, 178;
+  --primary-4: 6, 182, 212;
+  --primary-5: 34, 211, 238;
+  --primary-6: 103, 232, 249;
+  --primary-7: 165, 243, 252;
+  --primary-8: 207, 250, 254;
+  --primary-9: 236, 254, 255;
+  --primary-10: 236, 254, 255;
+}
+
+.uno-sky {
+  --primary-1: 240, 249, 255;
+  --primary-2: 224, 242, 254;
+  --primary-3: 186, 230, 253;
+  --primary-4: 125, 211, 252;
+  --primary-5: 56, 189, 248;
+  --primary-6: 14, 165, 233;
+  --primary-7: 2, 132, 199;
+  --primary-8: 3, 105, 161;
+  --primary-9: 7, 89, 133;
+  --primary-10: 12, 74, 110;
+}
+
+.dark .uno-sky {
+  --primary-1: 12, 74, 110;
+  --primary-2: 7, 89, 133;
+  --primary-3: 2, 132, 199;
+  --primary-4: 14, 165, 233;
+  --primary-5: 56, 189, 248;
+  --primary-6: 125, 211, 252;
+  --primary-7: 186, 230, 253;
+  --primary-8: 224, 242, 254;
+  --primary-9: 240, 249, 255;
+  --primary-10: 240, 249, 255;
+}
+
+.uno-blue {
+  --primary-1: 239, 246, 255;
+  --primary-2: 219, 234, 254;
+  --primary-3: 191, 219, 254;
+  --primary-4: 147, 197, 253;
+  --primary-5: 96, 165, 250;
+  --primary-6: 59, 130, 246;
+  --primary-7: 37, 99, 235;
+  --primary-8: 29, 78, 216;
+  --primary-9: 30, 64, 175;
+  --primary-10: 30, 58, 138;
+}
+
+.dark .uno-blue {
+  --primary-1: 30, 58, 138;
+  --primary-2: 30, 64, 175;
+  --primary-3: 37, 99, 235;
+  --primary-4: 59, 130, 246;
+  --primary-5: 96, 165, 250;
+  --primary-6: 147, 197, 253;
+  --primary-7: 191, 219, 254;
+  --primary-8: 219, 234, 254;
+  --primary-9: 239, 246, 255;
+  --primary-10: 239, 246, 255;
+}
+
+.uno-indigo {
+  --primary-1: 238, 242, 255;
+  --primary-2: 224, 231, 255;
+  --primary-3: 199, 210, 254;
+  --primary-4: 165, 180, 252;
+  --primary-5: 129, 140, 248;
+  --primary-6: 99, 102, 241;
+  --primary-7: 79, 58, 225;
+  --primary-8: 67, 56, 202;
+  --primary-9: 55, 48, 163;
+  --primary-10: 49, 46, 129;
+}
+
+.dark .uno-indigo {
+  --primary-1: 49, 46, 129;
+  --primary-2: 55, 48, 163;
+  --primary-3: 67, 56, 202;
+  --primary-4: 79, 58, 225;
+  --primary-5: 99, 102, 241;
+  --primary-6: 129, 140, 248;
+  --primary-7: 165, 180, 252;
+  --primary-8: 224, 231, 255;
+  --primary-9: 238, 242, 255;
+  --primary-10: 238, 242, 255;
+}
+
+.uno-violet {
+  --primary-1: 245, 243, 255;
+  --primary-2: 237, 233, 254;
+  --primary-3: 221, 214, 254;
+  --primary-4: 196, 181, 253;
+  --primary-5: 167, 139, 250;
+  --primary-6: 139, 86, 246;
+  --primary-7: 124, 62, 224;
+  --primary-8: 109, 40, 217;
+  --primary-9: 91, 33, 182;
+  --primary-10: 76, 29, 149;
+}
+
+.dark .uno-violet {
+  --primary-1: 76, 29, 149;
+  --primary-2: 91, 33, 182;
+  --primary-3: 109, 40, 217;
+  --primary-4: 124, 62, 224;
+  --primary-5: 139, 86, 246;
+  --primary-6: 167, 139, 250;
+  --primary-7: 196, 181, 253;
+  --primary-8: 221, 214, 254;
+  --primary-9: 237, 233, 254;
+  --primary-10: 245, 243, 255;
+}
+
+.uno-purple {
+  --primary-1: 250, 245, 255;
+  --primary-2: 243, 232, 255;
+  --primary-3: 233, 213, 255;
+  --primary-4: 216, 180, 254;
+  --primary-5: 192, 132, 252;
+  --primary-6: 168, 85, 247;
+  --primary-7: 155, 51, 234;
+  --primary-8: 126, 34, 181;
+  --primary-9: 107, 33, 168;
+  --primary-10: 88, 28, 135;
+}
+
+.dark .uno-purple {
+  --primary-1: 88, 28, 135;
+  --primary-2: 107, 33, 168;
+  --primary-3: 126, 34, 181;
+  --primary-4: 155, 51, 234;
+  --primary-5: 192, 132, 252;
+  --primary-6: 216, 180, 254;
+  --primary-7: 233, 213, 255;
+  --primary-8: 243, 232, 255;
+  --primary-9: 250, 245, 255;
+  --primary-10: 250, 245, 255;
+}
+
+.uno-fuchsia {
+  --primary-1: 253, 244, 255;
+  --primary-2: 250, 232, 255;
+  --primary-3: 245, 208, 254;
+  --primary-4: 240, 171, 252;
+  --primary-5: 232, 121, 249;
+  --primary-6: 217, 86, 239;
+  --primary-7: 192, 38, 195;
+  --primary-8: 162, 28, 175;
+  --primary-9: 134, 24, 143;
+  --primary-10: 112, 26, 117;
+}
+
+.dark .uno-fuchsia {
+  --primary-1: 112, 26, 117;
+  --primary-2: 134, 24, 143;
+  --primary-3: 162, 28, 175;
+  --primary-4: 192, 38, 195;
+  --primary-5: 217, 86, 239;
+  --primary-6: 232, 121, 249;
+  --primary-7: 245, 208, 254;
+  --primary-8: 250, 232, 255;
+  --primary-9: 253, 244, 255;
+  --primary-10: 253, 244, 255;
+}
+
+.uno-pink {
+  --primary-1: 253, 242, 248;
+  --primary-2: 252, 231, 243;
+  --primary-3: 251, 207, 232;
+  --primary-4: 249, 168, 212;
+  --primary-5: 244, 114, 182;
+  --primary-6: 244, 72, 153;
+  --primary-7: 219, 39, 119;
+  --primary-8: 190, 24, 93;
+  --primary-9: 157, 23, 77;
+  --primary-10: 131, 24, 67;
+}
+
+.dark .uno-pink {
+  --primary-1: 131, 24, 67;
+  --primary-2: 157, 23, 77;
+  --primary-3: 190, 24, 93;
+  --primary-4: 219, 39, 119;
+  --primary-5: 244, 72, 153;
+  --primary-6: 244, 114, 182;
+  --primary-7: 249, 168, 212;
+  --primary-8: 251, 207, 232;
+  --primary-9: 252, 231, 243;
+  --primary-10: 253, 242, 248;
+}
+
+.uno-rose {
+  --primary-1: 255, 241, 242;
+  --primary-2: 255, 230, 230;
+  --primary-3: 254, 205, 211;
+  --primary-4: 253, 164, 175;
+  --primary-5: 251, 113, 133;
+  --primary-6: 244, 63, 94;
+  --primary-7: 225, 29, 72;
+  --primary-8: 190, 18, 60;
+  --primary-9: 159, 18, 57;
+  --primary-10: 136, 19, 55;
+}
+
+.dark .uno-rose {
+  --primary-1: 136, 19, 55;
+  --primary-2: 159, 18, 57;
+  --primary-3: 190, 18, 60;
+  --primary-4: 225, 29, 72;
+  --primary-5: 244, 63, 94;
+  --primary-6: 251, 113, 133;
+  --primary-7: 253, 164, 175;
+  --primary-8: 254, 205, 211;
+  --primary-9: 255, 230, 230;
+  --primary-10: 255, 241, 242;
+}
+
+/* .uno-slate, .uno-gray, .uno-zinc, .uno-neutral, .uno-stone, .uno-red, .uno-orange, .uno-amber, .uno-yellow, .uno-lime, .uno-green, .uno-emerald, .uno-teal, .uno-cyan, .uno-sky, .uno-blue, .uno-indigo, .uno-violet, .uno-purple, .uno-fuchsia, .uno-pink, .uno-rose { */
+[class*='uno-'] {
+  --color-text-1: rgb(var(--primary-9));
+  --color-text-2: rgb(var(--primary-7));
+  --color-text-3: rgb(var(--primary-5));
+  --color-text-4: rgb(var(--primary-3));
+  --color-fill-1: rgb(var(--primary-1));
+  --color-fill-2: rgb(var(--primary-2));
+  --color-fill-3: rgb(var(--primary-3));
+  --color-fill-4: rgb(var(--primary-4));
+  --color-primary-light-1: rgb(var(--primary-1));
+  --color-primary-light-2: rgb(var(--primary-2));
+  --color-primary-light-3: rgb(var(--primary-3));
+  --color-primary-light-4: rgb(var(--primary-4));
+  --color-secondary: rgb(var(--primary-2));
+  --color-secondary-hover: rgb(var(--primary-3));
+  --color-secondary-active: rgb(var(--primary-4));
+  --color-secondary-disabled: rgb(var(--primary-1));
+  --color-neutral-1: rgb(var(--gray-1));
+  --color-neutral-2: rgb(var(--primary-1));
+  --color-neutral-3: rgb(var(--primary-2));
+  --color-neutral-4: rgb(var(--primary-3));
+  --color-neutral-5: rgb(var(--primary-4));
+  --color-neutral-6: rgb(var(--primary-5));
+  --color-neutral-7: rgb(var(--primary-6));
+  --color-neutral-8: rgb(var(--primary-7));
+  --color-neutral-9: rgb(var(--primary-8));
+  --color-neutral-10: rgb(var(--primary-9));
+}

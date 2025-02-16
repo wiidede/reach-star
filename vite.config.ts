@@ -1,13 +1,10 @@
 import path from 'node:path'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
-import Shiki from '@shikijs/markdown-it'
 import Vue from '@vitejs/plugin-vue'
-import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import VueMacros from 'unplugin-vue-macros/vite'
-import Markdown from 'unplugin-vue-markdown/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
@@ -15,7 +12,6 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import generateSitemap from 'vite-ssg-sitemap'
-import 'vitest/config'
 
 export default defineConfig({
   resolve: {
@@ -25,13 +21,7 @@ export default defineConfig({
   },
 
   plugins: [
-    VueMacros({
-      plugins: {
-        vue: Vue({
-          include: [/\.vue$/, /\.md$/],
-        }),
-      },
-    }),
+    Vue(),
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
@@ -55,6 +45,7 @@ export default defineConfig({
           'vue-router/auto': ['useLink'],
         },
       ],
+      resolvers: [ArcoResolver()],
       dts: 'src/auto-imports.d.ts',
       dirs: [
         'src/composables',
@@ -65,39 +56,17 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
-      // allow auto load markdown components under `./src/components/`
-      extensions: ['vue', 'md'],
-      // allow auto import and register components used in markdown
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
+      resolvers: [
+        ArcoResolver({
+          sideEffect: true,
+        }),
+      ],
     }),
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     Unocss(),
-
-    // https://github.com/unplugin/unplugin-vue-markdown
-    // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
-    Markdown({
-      wrapperClasses: 'prose prose-sm m-auto text-left',
-      headEnabled: true,
-      async markdownItSetup(md) {
-        md.use(LinkAttributes, {
-          matcher: (link: string) => /^https?:\/\//.test(link),
-          attrs: {
-            target: '_blank',
-            rel: 'noopener',
-          },
-        })
-        md.use(await Shiki({
-          defaultColor: false,
-          themes: {
-            light: 'vitesse-light',
-            dark: 'vitesse-dark',
-          },
-        }))
-      },
-    }),
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
@@ -140,12 +109,6 @@ export default defineConfig({
     VueDevTools(),
   ],
 
-  // https://github.com/vitest-dev/vitest
-  test: {
-    include: ['test/**/*.test.ts'],
-    environment: 'jsdom',
-  },
-
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
     script: 'async',
@@ -160,6 +123,11 @@ export default defineConfig({
 
   ssr: {
     // TODO: workaround until they support native ESM
-    noExternal: ['workbox-window', /vue-i18n/],
+    noExternal: [
+      'workbox-window',
+      /vue-i18n/,
+      '@arco-design/web-vue',
+      'scroll-into-view-if-needed',
+    ],
   },
 })

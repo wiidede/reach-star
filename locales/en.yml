@@ -1,14 +1,93 @@
+title: Reach Star
+enter: 'Please Enter '
+select: 'Please Select '
+input: 'Please Input '
+notFound: 404 Not Found
 button:
-  about: About
   back: Back
-  go: GO
+  confirm: Confirm
+  cancel: Cancel
+  loadMore: Load More
+  loadAll: Load All
+time:
+  date: MM/DD/YYYY
+  dateShort: MM/DD
+  datetime: HH:mm MM/DD/YYYY
+nav:
   home: Home
-  toggle_dark: Toggle dark mode
-  toggle_langs: Change languages
-intro:
-  desc: Opinionated Vite Starter Template
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  aka: Also known as
-  whats-your-name: What's your name?
-not-found: Not found
+  calendar: Calendar
+  goals: Goals
+  achievement: Medal
+  goalsManage: Goals Manage
+  about: About
+  dataManage: Data Manage
+  settings: Settings
+  appManage: App Manage
+  preference: Preference
+  appInfo: App Info
+label:
+  achievement: Medal
+  credits: Credits
+app:
+  ruleGoal: Please select one goal
+  ruleStartTime: 'Task not started yet, start time: '
+  ruleEndTime: 'Task has ended, end time: '
+  ruleDayGoal: Please enter today goal (1-10000)
+  ruleWeekGoal: Please enter this week goal (1-10000)
+  tipReward: Good job! You have achieved {value} credits, get one reward!!
+  tipGoal: Nice job! You have achieved {name} goal!
+  tipDay: You have achieved today goal!
+  tipWeek: You have achieved this week goal!
+  dayGoal: Today goal
+  weekGoal: This week goal
+  dayScore: Today score
+  weekScore: This week score
+  placeholderRemark: Maybe you have some thoughts
+  progress: Today progress
+  add: Add one record
+  rewardDoneTime: Reward Done Time
+  week: Week
+goals:
+  ruleName: Please enter goal name
+  ruleScore: Please enter goal total score (1-10000)
+  ruleOneName: Please enter single record name
+  ruleOneScore: Please enter single record score (1-10000)
+  ruleRangeZero: Stage reward value cannot be 0
+  ruleRangeDuplicate: 'Stage reward value cannot be duplicated: '
+  complete: Complete
+  add: Add a goal
+  goalName: Goal name
+  goalScore: Goal total score
+  oneTimeContent: Single record name
+  oneTimeScore: Single record score
+  timeRange: Completion time
+  stageReward: Stage reward
+  color: Color
+  icon: Icon
+  clearTip: Are you sure to clear this record?
+  currentScore: Current score
+  completeTime: Complete time
+data:
+  export: Export Data
+  import: Import Data
+  clearConfirm: Clear
+  clearTip: Are you sure to clear all data?
+  clear: Clear Data
+  label: Data
+  ruleData: Please enter correct data format
+  tipFormatError: Data format error
+  importSuccess: Import data success
+  copySuccess: Copied to clipboard
+  clearSuccess: Cleared all data
+bag:
+  total: Total
+  goal: Goal
+  day: Day
+  week: Week
+  reward: Reward
+  rewardTimes: Number of rewards obtained
+  dayStar: Day Star
+  weekStar: Week Star
+about:
+  start: ✨ start reach star journey
+  continue: ✨ continue reach star journey
