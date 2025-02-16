@@ -44,7 +44,9 @@ watch(visible, async (value) => {
   >
     <div v-if="currentData" class="flex flex-col items-center text-uno-4">
       <div class="text-8xl" :class="currentData.icon" />
-      <div>{{ currentData.content }}</div>
+      <div class="text-center">
+        {{ currentData.content }}
+      </div>
     </div>
   </a-modal>
 </template>

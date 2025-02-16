@@ -17,11 +17,13 @@ const { t } = useI18n()
       boxShadow: `inset 0px 0px 1px 1px rgb(var(--primary-2)), 1px 2px 12px 0px rgb(var(--primary-2)), 0 1px 6px 0px #00000020`,
     }"
   >
-    <div class="text-8 font-bold text-uno-5">
-      <div :class="record.icon" />
-    </div>
-    <div class="point-number text-8 font-bold text-uno-5">
-      +{{ displayNumber(record.point) }}
+    <div class="flex flex-col items-center gap1 md:flex-row md:gap-4">
+      <div class="text-8 font-bold text-uno-5">
+        <div :class="record.icon" />
+      </div>
+      <div class="point-number text-6 font-bold text-uno-5 md:text-8">
+        +{{ displayNumber(record.point) }}
+      </div>
     </div>
     <div class="min-w-0 flex-auto">
       <div class="line-warp text-6 text-uno-7">
