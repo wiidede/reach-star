@@ -203,13 +203,13 @@
   --at-apply: line-warp;
 }
 
-.reach-star .arco-popconfirm-body {
+.reach-star .arco-popconfirm-popup-content .arco-popconfirm-body {
   font-size: 1rem;
   display: flex;
   align-items: center;
 }
 
-.reach-star .arco-popconfirm-body .arco-popconfirm-icon {
+.reach-star .arco-popconfirm-popup-content .arco-popconfirm-body .arco-popconfirm-icon {
   font-size: 1.2rem;
   height: auto;
 }
