@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import type { Goal, TheDescData, TheRangeData, TheRangeRenderFn } from '~/types'
+import type { RangeData, RangeRenderFn } from 'vue-range-multi'
+import type { Goal, TheDescData } from '~/types'
 
 const props = defineProps<{
   goal: Goal | undefined
@@ -24,9 +25,9 @@ const rangeData = computed(() => props.goal?.points.map(point => ({
   data: point.icon,
   value: getPercentage2Value(point.value, 0, props.goal?.goalScore || 100),
   key: Symbol('key'),
-} as TheRangeData<string>)))
+} as RangeData<string>)))
 
-const rangeRenderTop: TheRangeRenderFn<string> = (data) => {
+const rangeRenderTop: RangeRenderFn<string, RangeData<string>> = (data) => {
   return h('div', {
     class: 'text-uno-5 flex flex-col items-center line-height-initial',
   }, [
@@ -52,10 +53,10 @@ const rangeRenderTop: TheRangeRenderFn<string> = (data) => {
       <a-tag>{{ item.value }}</a-tag>
     </a-descriptions-item>
     <a-descriptions-item :label="t('goals.stageReward')">
-      <TheRange
+      <MRange
         :model-value="rangeData || []"
         :max="goal.goalScore"
-        :progress="goal.currentScore / goal.goalScore * 100"
+        :progress="[[0, goal.currentScore / goal.goalScore * 100]]"
         class="pointer-events-none w-full"
         :class="{ 'pt16 pb8': rangeData?.length }"
         :render-top="rangeRenderTop"

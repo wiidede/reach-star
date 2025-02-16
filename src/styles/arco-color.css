@@ -601,3 +601,11 @@
   --color-neutral-9: rgb(var(--primary-8));
   --color-neutral-10: rgb(var(--primary-9));
 }
+
+body [class*='uno-'] .m-range-theme {
+  --c-primary: rgb(var(--primary-4));
+  --c-fill: var(--color-fill-2);
+  --c-fill-stop: var(--color-fill-1);
+  --c-fill-thumb: var(--color-fill-3);
+  --c-drop: var(--c-primary);
+}

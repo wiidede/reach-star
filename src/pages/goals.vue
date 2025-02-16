@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { FieldRule, FormInstance } from '@arco-design/web-vue'
-import type { Goal, TheRangeData, TheRangeRenderFn } from '~/types'
+import type { RangeData, RangeRenderFn } from 'vue-range-multi'
+import type { Goal } from '~/types'
 import TheIconSelectorVue from '~/components/TheIconSelector.vue'
 
 const { t } = useI18n()
@@ -9,7 +10,7 @@ const { store } = useStarStore()
 const { colorList, randomColor } = useColors()
 const { iconList, randomIcon, randomRewardIcon } = useIcons()
 
-const newGoal = ref<Goal & { newRange: TheRangeData<string>[] }>()
+const newGoal = ref<Goal & { newRange: RangeData<string>[] }>()
 const goals = computed(() => store.value ? [...store.value.goals].reverse() : [])
 const formRef = ref<FormInstance>()
 const rules: Partial<Record<keyof Goal | 'newRange', FieldRule | FieldRule[]>> = {
@@ -18,7 +19,7 @@ const rules: Partial<Record<keyof Goal | 'newRange', FieldRule | FieldRule[]>> =
   oneTimeContent: [{ required: true, message: t('goals.ruleOneName') }],
   oneTimeScore: [{ type: 'number', min: 1, max: 10000, required: true, message: t('goals.ruleOneScore') }],
   newRange: [{
-    validator: (value: TheRangeData<string>[], callback) => {
+    validator: (value: RangeData<string>[], callback) => {
       const values = value.map(item => getPercentage2Value(item.value, 0, newGoal.value?.goalScore))
       if (values.includes(0)) {
         callback(t('goals.ruleRangeZero'))
@@ -56,7 +57,6 @@ function handleAdd() {
     newRange: [{
       value: 100,
       data: '',
-      key: Symbol('key'),
       disabled: true,
       renderTop: () => h('div', {
         class: 'text-center text-uno-5 whitespace-nowrap',
@@ -95,7 +95,7 @@ function handleDelete(item: Goal) {
     store.value.goals.splice(index, 1)
 }
 
-const rangeRenderTop: TheRangeRenderFn<string> = (data) => {
+const rangeRenderTop: RangeRenderFn<string, RangeData<string>> = (data) => {
   return h('div', {
     class: 'text-uno-5 flex flex-col items-center line-height-initial',
   }, [
@@ -110,17 +110,17 @@ const rangeRenderTop: TheRangeRenderFn<string> = (data) => {
     h('div', { }, getPercentage2Value(data.value, 0, newGoal.value?.goalScore)),
   ])
 }
-const rangeRenderBottom: TheRangeRenderFn<string> = (data) => {
+const rangeRenderBottom: RangeRenderFn<string, RangeData<string>> = (data) => {
   return h('div', { class: 'text-center text-uno-5' }, [
     h('div', { class: 'text-3' }, `${data.value}%`),
   ])
 }
 
-function addPoint(value: number) {
-  if (!newGoal.value)
-    return
-  const index = newGoal.value.newRange.findIndex(item => item.value > value)
-  newGoal.value.newRange.splice(index, 0, { value, data: randomRewardIcon(), key: Symbol('key') })
+function handleAddData(value: number) {
+  return {
+    value,
+    data: randomRewardIcon(),
+  }
 }
 </script>
 
@@ -207,13 +207,15 @@ function addPoint(value: number) {
                 </a-range-picker>
               </a-form-item>
               <a-form-item field="newRange" :label="t('goals.stageReward')">
-                <TheRange
+                <MRange
                   v-model="newGoal.newRange"
                   class="w-full pb8 pt16"
+                  size="large"
+                  addable
+                  :add-data="handleAddData"
                   :render-top="rangeRenderTop"
                   :render-bottom="rangeRenderBottom"
-                  :max-thumb="6"
-                  @add-thumb="addPoint"
+                  :limit="6"
                 />
               </a-form-item>
               <a-form-item field="color" :label="t('goals.color')">

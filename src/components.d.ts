@@ -26,6 +26,7 @@ declare module 'vue' {
     ATextarea: typeof import('@arco-design/web-vue')['Textarea']
     ATrigger: typeof import('@arco-design/web-vue')['Trigger']
     DarkToggle: typeof import('./components/DarkToggle.vue')['default']
+    MRange: typeof import('vue-range-multi')['Range']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheAchievementModal: typeof import('./components/TheAchievementModal.vue')['default']

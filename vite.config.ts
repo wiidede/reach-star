@@ -12,6 +12,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
 import generateSitemap from 'vite-ssg-sitemap'
+import { VueRangeMultiResolver } from 'vue-range-multi'
 
 export default defineConfig({
   resolve: {
@@ -61,6 +62,7 @@ export default defineConfig({
         ArcoResolver({
           sideEffect: true,
         }),
+        VueRangeMultiResolver(),
       ],
     }),
 
