@@ -25,6 +25,9 @@ function setI18nLanguage(lang: Locale) {
 }
 
 export async function loadLanguageAsync(lang: string): Promise<Locale> {
+  if (typeof window !== 'undefined')
+    localStorage.setItem('user-language', lang)
+
   // If the same language
   if (i18n.global.locale.value === lang)
     return setI18nLanguage(lang)
@@ -42,6 +45,8 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
 
 export const install: UserModule = ({ app }) => {
   app.use(i18n)
+  const savedLang = typeof window !== 'undefined' ? localStorage.getItem('user-language') : null
   const navLang = import.meta.env.SSR ? '' : navigator.language.split('-')[0]
-  loadLanguageAsync(availableLocales.includes(navLang) ? navLang : 'en')
+  const defaultLang = savedLang || (availableLocales.includes(navLang) ? navLang : 'en')
+  loadLanguageAsync(defaultLang)
 }
