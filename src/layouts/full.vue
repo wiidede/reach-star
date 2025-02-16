@@ -16,6 +16,9 @@ if (!fontSize.value)
   fontSize.value = '20px'
 const color = useLocalStorage('reach-star-color', 'pink')
 watch(color, (value) => {
+  if (import.meta.env.SSR) {
+    return
+  }
   const oldClass = Array.from(document.body.classList).find(className => className.startsWith('uno-'))
   if (oldClass)
     document.body.classList.remove(oldClass)

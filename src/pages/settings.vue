@@ -5,7 +5,7 @@ const { t } = useI18n()
 const router = useRouter()
 
 const back = useLocalStorage('reach-star-back', '')
-const historyBack: string = import.meta.env.SSR ? undefined : history.state.back || '/'
+const historyBack: string = (import.meta.env.SSR ? undefined : history.state.back) || '/'
 if (!historyBack.endsWith('/settings'))
   back.value = historyBack
 
