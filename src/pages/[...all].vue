@@ -6,7 +6,7 @@ const { t } = useI18n()
 <template>
   <main p="x4 y10" text="center teal-700 dark:gray-200">
     <div text-4xl>
-      <div i-carbon-warning inline-block />
+      <div i-solar-shield-warning-bold-duotone inline-block />
     </div>
     <div>{{ t('notFound') }}</div>
     <div>
@@ -16,3 +16,8 @@ const { t } = useI18n()
     </div>
   </main>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: full
+</route>
